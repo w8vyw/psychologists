@@ -1,0 +1,30 @@
+:root {
+	// Colors
+	--primary: #cb19a4;
+	--secondary: #f7dff2;
+	--background: white;
+	--text: #222;
+	--gray: #adadad;
+	--green: #4fbe3c;
+
+	// z-indexes
+	--z-i-max: 6;
+	--z-i-high: 5;
+	--z-i-medium: 4;
+	--z-i-normal: 3;
+	--z-i-lite: 2;
+	--z-i-min: 1;
+
+	// Breakpoints
+	--xxxl: 1536px;
+	--xxl: 1440px;
+	--xl: 1280px;
+	--lg: 1024px;
+	--lg2: 992px;
+	--md: 768px;
+	--sm: 640px;
+
+	&.isOtherPage {
+		--background: var(--secondary);
+	}
+}

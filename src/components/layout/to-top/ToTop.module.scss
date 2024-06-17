@@ -1,0 +1,31 @@
+.toTop {
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
+
+	padding: 11.65px 10px;
+	border-radius: 50%;
+	visibility: hidden;
+	opacity: 0;
+	box-shadow: 0 5px 5px rgb(0 0 0 / 10%);
+
+	background: white;
+
+	transition: 0.35s ease-in-out;
+
+	scale: 0.7;
+
+	.icon {
+		width: 24px;
+		height: 15px;
+
+		fill: #cb19a4;
+	}
+
+	&.active {
+		visibility: visible;
+		opacity: 1;
+
+		scale: 1;
+	}
+}

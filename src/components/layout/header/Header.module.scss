@@ -1,0 +1,13 @@
+.header {
+	margin-bottom: 50px;
+
+	background: white;
+}
+
+.wrapper {
+	@media (width <= 1023px) {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}

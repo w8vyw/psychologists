@@ -1,0 +1,38 @@
+body {
+	display: flex;
+	flex-direction: column;
+
+	min-height: 2000px;
+
+	background: var(--background);
+
+	color: var(--text);
+}
+
+main {
+	flex-grow: 1;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: white;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+
+	background: var(--primary);
+}
+
+::selection {
+	background: var(--primary);
+
+	color: white;
+}
+
+.scrollLocked {
+	overflow: hidden;
+}

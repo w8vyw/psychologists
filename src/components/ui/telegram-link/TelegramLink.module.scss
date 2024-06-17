@@ -1,0 +1,15 @@
+.link {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	color: var(--primary);
+	font-size: 18px;
+
+	.icon {
+		width: 30px;
+		height: 30px;
+
+		fill: var(--primary);
+	}
+}
