@@ -7,10 +7,6 @@
 		max-height: 44px;
 
 		fill: var(--primary);
-
-		@media (width <=480px) {
-			width: 75px;
-		}
 	}
 
 	.text {
@@ -21,13 +17,6 @@
 
 		font-family: var(--tenor-sans);
 		font-size: 18px;
-		line-height: 20px;
-
-		@media (width <=480px) {
-			margin-top: 4px;
-
-			font-size: 16px;
-			line-height: 14px;
-		}
+		line-height: 16px;
 	}
 }

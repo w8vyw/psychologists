@@ -23,7 +23,7 @@ import { MenuButton } from './menu-button/MenuButton'
 export function Navigation() {
 	const isOtherPage = useIsOtherPage()
 	const pathname = usePathname()
-	const isMobile = useMediaQuery('(width <= 1023px)')
+	const isMobile = useMediaQuery('(width <= 991px)')
 
 	const [isMenuActive, setIsMenuActive] = useState<boolean>(false)
 	const menuRef = useRef<HTMLUListElement>(null)
@@ -31,8 +31,8 @@ export function Navigation() {
 
 	useEffect(() => {
 		isOtherPage
-			? document.documentElement.classList.add('isOtherPage')
-			: document.documentElement.classList.remove('isOtherPage')
+			? document.body.classList.add('isOtherPage')
+			: document.body.classList.remove('isOtherPage')
 	}, [isOtherPage])
 
 	useEffect(() => {

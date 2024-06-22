@@ -3,7 +3,7 @@ import { Inter, Tenor_Sans } from 'next/font/google'
 
 import clsx from 'clsx'
 
-import '@/styles/main.scss'
+import '@/styles/global.scss'
 
 import { Footer } from './footer/Footer'
 import { Header } from './header/Header'

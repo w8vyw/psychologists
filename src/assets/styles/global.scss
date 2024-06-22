@@ -1,7 +1,32 @@
+@import 'reset';
+@import 'variables';
+
+:root {
+	// Colors
+	--primary: #cb19a4;
+	--secondary: #f7dff2;
+	--background: white;
+	--text: #222;
+	--gray: #adadad;
+	--green: #4fbe3c;
+
+	// z-indexes
+	--z-i-max: 6;
+	--z-i-high: 5;
+	--z-i-medium: 4;
+	--z-i-normal: 3;
+	--z-i-lite: 2;
+	--z-i-min: 1;
+
+	.isOtherPage {
+		--background: var(--secondary);
+	}
+}
+
 body {
 	display: flex;
 	flex-direction: column;
-
+	min-width: 320px;
 	min-height: 2000px;
 
 	background: var(--background);

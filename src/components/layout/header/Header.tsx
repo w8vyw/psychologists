@@ -2,7 +2,7 @@ import styles from './Header.module.scss'
 
 import { Wrapper } from '@/components/ui/wrapper/Wrapper'
 
-import { Navigation } from './navigation/Navigation.1'
+import { Navigation } from './navigation/Navigation'
 import { TopLine } from './top-line/TopLine'
 
 export function Header() {

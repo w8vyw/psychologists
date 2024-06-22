@@ -1,9 +1,11 @@
+@import '@/styles/variables';
+
 .nav {
 	--border: 1px solid #e2e5ec;
 	border-top: var(--border);
 	border-bottom: var(--border);
 
-	@media (width <= 1023px) {
+	@media (width <= $lg) {
 		--border: none;
 	}
 }

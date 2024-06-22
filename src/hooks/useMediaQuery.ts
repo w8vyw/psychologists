@@ -9,7 +9,6 @@ export function useMediaQuery(query: string): boolean {
 		// if (IS_SERVER) {
 		// 	return false
 		// }
-		// console.log(getComputedStyle(document.documentElement).getPropertyValue('--lg'))
 
 		return window.matchMedia(query).matches
 	}

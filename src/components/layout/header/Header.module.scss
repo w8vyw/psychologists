@@ -1,3 +1,5 @@
+@import '@/styles/variables';
+
 .header {
 	margin-bottom: 50px;
 
@@ -5,7 +7,7 @@
 }
 
 .wrapper {
-	@media (width <= 1023px) {
+	@media (width <= $lg) {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
