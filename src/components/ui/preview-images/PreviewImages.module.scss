@@ -1,0 +1,21 @@
+@import '@/styles/variables';
+
+.images {
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+
+	margin-bottom: 35px;
+
+	@media (width <= $md) {
+		gap: 15px;
+		margin-bottom: 20px;
+	}
+
+	.image {
+		min-width: 0;
+		height: auto;
+		object-fit: cover;
+		object-position: center;
+	}
+}

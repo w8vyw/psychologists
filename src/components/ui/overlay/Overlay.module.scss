@@ -10,6 +10,8 @@
 
 	background: black;
 
+	transition: 200ms ease-out;
+
 	&.active {
 		opacity: 0.5;
 		visibility: visible;

@@ -1,14 +1,14 @@
-import { HTMLAttributes, PropsWithChildren } from 'react'
+import { type PropsWithChildren, type HTMLAttributes } from 'react'
 
 import clsx from 'clsx'
 
 import styles from './Section.module.scss'
 
-interface ISectionProps extends HTMLAttributes<HTMLDivElement> {
-	className?: string
-}
-
-export function Section({ className, children, ...props }: PropsWithChildren<ISectionProps>) {
+export function Section({
+	className,
+	children,
+	...props
+}: PropsWithChildren<HTMLAttributes<HTMLDivElement>>) {
 	return (
 		<div
 			className={clsx(styles.section, className)}

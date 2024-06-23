@@ -8,10 +8,25 @@
 	padding: 20px 40px;
 
 	@media (width <= $lg) {
-		padding: 20px 0;
+		padding: 0;
 	}
-}
 
-.phones {
-	gap: 30px;
+	.phones {
+		display: flex;
+		gap: 30px;
+
+		color: var(--primary);
+		font-size: 20px;
+		font-weight: 500;
+
+		@media (width <= $lg) {
+			display: none;
+		}
+	}
+
+	.tg {
+		@media (width <= $lg) {
+			display: none;
+		}
+	}
 }

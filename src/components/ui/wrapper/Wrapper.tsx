@@ -1,14 +1,14 @@
-import { HTMLAttributes, PropsWithChildren } from 'react'
+import { type PropsWithChildren, type HTMLAttributes } from 'react'
 
 import clsx from 'clsx'
 
 import styles from './Wrapper.module.scss'
 
-interface IWrapperProps extends HTMLAttributes<HTMLDivElement> {
-	className?: string
-}
-
-export function Wrapper({ className, children, ...props }: PropsWithChildren<IWrapperProps>) {
+export function Wrapper({
+	children,
+	className,
+	...props
+}: PropsWithChildren<HTMLAttributes<HTMLDivElement>>) {
 	return (
 		<div
 			className={clsx(styles.wrapper, className)}

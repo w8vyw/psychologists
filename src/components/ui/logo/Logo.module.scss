@@ -1,4 +1,6 @@
-.link {
+@import '@/styles/variables';
+
+.logo {
 	display: flex;
 	gap: 10px;
 
@@ -7,6 +9,10 @@
 		max-height: 44px;
 
 		fill: var(--primary);
+
+		@media (width <= $sm) {
+			width: 75px;
+		}
 	}
 
 	.text {
@@ -18,5 +24,9 @@
 		font-family: var(--tenor-sans);
 		font-size: 18px;
 		line-height: 16px;
+
+		@media (width <= $sm) {
+			font-size: 16px;
+		}
 	}
 }

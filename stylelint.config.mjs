@@ -20,16 +20,17 @@ export default {
 				'custom-properties',
 				'dollar-variables',
 				'declarations',
-				'rules',
 				'at-rules',
-				{ type: 'rule', selector: '^&:[\\w-]+$', name: 'pseudo-classes' },
-				{ type: 'rule', selector: '^&::[\\w-]+$', name: 'pseudo-element' },
-				{ type: 'rule', selector: '^&:\\w+(::\\w+)?$', name: 'pseudo-mix' },
+				{ type: 'at-rule', name: 'include' },
+				{ type: 'at-rule', name: 'include', hasBlock: true },
+				{ type: 'at-rule', name: 'media', parameter: 'hover' },
 				{ type: 'at-rule', name: 'media', parameter: '<=' },
 				{ type: 'at-rule', name: 'media', parameter: '>=' },
 				{ type: 'at-rule', name: 'media' },
-				{ type: 'at-rule', name: 'include', hasBlock: true },
-				{ type: 'at-rule', name: 'include' }
+				{ type: 'rule', selector: '^&:[\\w-]+$', name: 'pseudo-classes' },
+				{ type: 'rule', selector: '^&::[\\w-]+$', name: 'pseudo-element' },
+				{ type: 'rule', selector: '^&:\\w+(::\\w+)?$', name: 'pseudo-mix' },
+				'rules'
 			],
 			{ unspecified: 'top' }
 		],
@@ -46,6 +47,7 @@ export default {
 					name: 'block model',
 					properties: [
 						'display',
+						'flex-flow',
 						'flex-direction',
 						'flex-wrap',
 						'justify-content',
@@ -96,7 +98,9 @@ export default {
 						'outline-width',
 						'outline-style',
 						'outline-color',
-						'outline-offset'
+						'outline-offset',
+						'object-fit',
+						'object-position'
 					],
 					emptyLineBefore: 'always'
 				},

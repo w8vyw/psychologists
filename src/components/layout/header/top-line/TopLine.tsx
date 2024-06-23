@@ -1,25 +1,24 @@
-'use client'
+import Link from 'next/link'
 
 import styles from './TopLine.module.scss'
 
 import { Logo } from '@/components/ui/logo/Logo'
-import { Phones } from '@/components/ui/phones/Phones'
-import { TelegramLink } from '@/components/ui/telegram-link/TelegramLink'
 
-import { useMediaQuery } from '@/hooks/useMediaQuery'
+import { TelegramLink } from './telegram-link/TelegramLink'
 
 export function TopLine() {
-	const isDesktop: boolean = useMediaQuery('(width >= 1024px)')
-
 	return (
-		<div className={styles.line}>
-			<Logo />
-			{isDesktop && (
-				<>
-					<Phones className={styles.phones} />
-					<TelegramLink />
-				</>
-			)}
-		</div>
+		<ul className={styles.line}>
+			<li>
+				<Logo />
+			</li>
+			<li className={styles.phones}>
+				<Link href='tel:+79852428318'>+7 985 242 83 18</Link>
+				<Link href='tel:+79254507146'>+7 925 450 71 46</Link>
+			</li>
+			<li className={styles.tg}>
+				<TelegramLink />
+			</li>
+		</ul>
 	)
 }

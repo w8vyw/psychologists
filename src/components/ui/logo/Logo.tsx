@@ -13,7 +13,7 @@ interface ILogoProps extends HTMLAttributes<HTMLAnchorElement> {
 export function Logo({ className, ...props }: ILogoProps) {
 	return (
 		<Link
-			className={clsx(styles.link, className)}
+			className={clsx(styles.logo, className)}
 			href='/'
 			title='Логотип ir-ox-help.ru'
 			{...props}

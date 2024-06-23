@@ -4,12 +4,16 @@
 	margin-bottom: 50px;
 
 	background: white;
-}
 
-.wrapper {
 	@media (width <= $lg) {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		margin-bottom: 30px;
+
+		.wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			padding: 20px;
+		}
 	}
 }

@@ -5,6 +5,8 @@ import { Wrapper } from '@/components/ui/wrapper/Wrapper'
 import { Navigation } from './navigation/Navigation'
 import { TopLine } from './top-line/TopLine'
 
+export const mobileBreakpoint = '991px'
+
 export function Header() {
 	return (
 		<header className={styles.header}>

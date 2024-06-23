@@ -5,6 +5,7 @@ import clsx from 'clsx'
 
 import '@/styles/global.scss'
 
+import { Flowers } from './flowers/Flowers'
 import { Footer } from './footer/Footer'
 import { Header } from './header/Header'
 import { ToTop } from './to-top/ToTop'
@@ -43,6 +44,7 @@ export default function Layout({
 			<body className={clsx(inter.className, tenorSans.variable)}>
 				<Header />
 				<main>{children}</main>
+				<Flowers />
 				{/* <ToTop /> */}
 				<Footer />
 			</body>

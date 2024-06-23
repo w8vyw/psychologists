@@ -1,0 +1,11 @@
+.text {
+	display: flex;
+	flex-direction: column;
+	gap: 35px;
+
+	font-size: 22px;
+
+	span {
+		font-weight: 600;
+	}
+}

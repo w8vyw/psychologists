@@ -1,0 +1,7 @@
+.flowers {
+	display: none;
+
+	&.active {
+		display: block;
+	}
+}
