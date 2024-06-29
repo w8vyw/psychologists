@@ -39,13 +39,13 @@ export default function Layout({
 	return (
 		<html
 			lang='ru'
-			className='poweredBy__@w8vyw__NextJS'
+			className='poweredBy__@w8vyw__NextJS__'
 		>
 			<body className={clsx(inter.className, tenorSans.variable)}>
 				<Header />
 				<main>{children}</main>
 				<Flowers />
-				{/* <ToTop /> */}
+				<ToTop />
 				<Footer />
 			</body>
 		</html>
