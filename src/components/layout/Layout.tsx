@@ -5,8 +5,6 @@ import clsx from 'clsx'
 
 import '@/styles/global.scss'
 
-import { Flowers } from './flowers/Flowers'
-import { Footer } from './footer/Footer'
 import { Header } from './header/Header'
 import { ToTop } from './to-top/ToTop'
 
@@ -20,14 +18,14 @@ const inter = Inter({
 	subsets: ['latin'],
 	display: 'swap',
 	weight: ['400', '500', '600', '700'],
-	style: ['normal']
+	style: 'normal'
 })
 
 const tenorSans = Tenor_Sans({
 	subsets: ['latin'],
 	display: 'swap',
-	weight: ['400'],
-	style: ['normal'],
+	weight: '400',
+	style: 'normal',
 	variable: '--tenor-sans'
 })
 
@@ -44,9 +42,7 @@ export default function Layout({
 			<body className={clsx(inter.className, tenorSans.variable)}>
 				<Header />
 				<main>{children}</main>
-				<Flowers />
 				<ToTop />
-				<Footer />
 			</body>
 		</html>
 	)

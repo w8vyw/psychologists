@@ -1,9 +1,6 @@
-interface Link {
-	href: string
-	label: string
-}
+import { type ILink } from '@/types'
 
-const links: Link[] = [
+const navlinks: ILink[] = [
 	{
 		href: '/',
 		label: 'Главная'
@@ -34,4 +31,4 @@ const links: Link[] = [
 	}
 ]
 
-export default links
+export default navlinks

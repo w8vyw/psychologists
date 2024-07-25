@@ -1,4 +1,4 @@
-import { HTMLAttributes, type PropsWithChildren } from 'react'
+import { type HTMLAttributes, type PropsWithChildren } from 'react'
 
 import clsx from 'clsx'
 

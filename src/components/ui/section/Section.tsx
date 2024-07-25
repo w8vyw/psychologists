@@ -8,13 +8,13 @@ export function Section({
 	className,
 	children,
 	...props
-}: PropsWithChildren<HTMLAttributes<HTMLDivElement>>) {
+}: PropsWithChildren<HTMLAttributes<HTMLElement>>) {
 	return (
-		<div
+		<section
 			className={clsx(styles.section, className)}
 			{...props}
 		>
 			{children}
-		</div>
+		</section>
 	)
 }

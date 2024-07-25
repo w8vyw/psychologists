@@ -10,6 +10,7 @@
 	"endOfLine": "lf",
 	"singleAttributePerLine": true,
 	"importOrder": [
+		"^./page.data(.*)$",
 		"^next(.*)$",
 		"^react(.*)$",
 		"<THIRD_PARTY_MODULES>",

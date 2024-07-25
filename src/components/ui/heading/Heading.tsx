@@ -1,12 +1,15 @@
-import { type HTMLAttributes } from 'react'
+import { type ComponentProps } from 'react'
 
 import clsx from 'clsx'
 
 import styles from './Heading.module.scss'
 
-import { type IHeadingContent } from '@/types/global'
+export interface IHeadingContent {
+	title: string
+	subtitle?: string
+}
 
-interface IHeadingProps extends HTMLAttributes<HTMLDivElement> {
+interface IHeadingProps extends ComponentProps<'div'> {
 	headingContent: IHeadingContent
 }
 
@@ -17,7 +20,7 @@ export function Heading({ headingContent, className, ...props }: IHeadingProps) 
 			{...props}
 		>
 			<h1 className={styles.title}>{headingContent.title}</h1>
-			<h2 className={styles.subtitle}>{headingContent.subtitle}</h2>
+			<p className={styles.subtitle}>{headingContent.subtitle}</p>
 		</div>
 	)
 }

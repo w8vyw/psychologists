@@ -1,13 +1,16 @@
 .message {
 	position: relative;
 
+	margin-bottom: 80px;
+
 	padding: 30px 30px 30px 89px;
 	border-radius: 10px;
 	box-shadow: 0 4px 4px 0 #0000001a;
 
-	background: white;
+	background: #faeef8;
 
 	font-size: 22px;
+	line-height: 1.5;
 
 	&::before {
 		content: '';

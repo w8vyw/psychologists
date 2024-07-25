@@ -1,0 +1,16 @@
+.cards {
+	.heading {
+		margin-bottom: 60px;
+
+		font-family: var(--tenor-sans);
+		font-size: 50px;
+		text-align: center;
+	}
+
+	.list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 30px;
+	}
+}

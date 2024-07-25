@@ -18,6 +18,9 @@
 	--z-i-lite: 2;
 	--z-i-min: 1;
 
+	// margins
+	--m-b-default: 80px;
+
 	.isOtherPage {
 		--background: var(--secondary);
 	}
@@ -28,6 +31,7 @@ body {
 	flex-direction: column;
 
 	min-height: 2000px;
+	padding-bottom: 160px;
 
 	background: var(--background);
 

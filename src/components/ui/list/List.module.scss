@@ -1,13 +1,17 @@
 .listsContainer {
 	display: flex;
 	gap: 60px;
+	margin-bottom: 80px;
 }
 
 .list {
 	display: flex;
 	flex-flow: column wrap;
-	gap: 40px;
+	gap: 30px;
+	flex-grow: 1;
+	flex-basis: calc(50% - 30px);
 	max-width: 100%;
+	margin-top: 30px;
 
 	font-size: 22px;
 
@@ -40,6 +44,9 @@
 .ticks {
 	.item {
 		&::before {
+			width: 23px;
+			height: 17px;
+
 			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 23 17' width='23' height='17'%3E%3Cpath d='M8.07114 13.7994L1.70718 7.4354L0.292969 8.84961L8.07114 16.6278L22.9204 1.77854L21.5062 0.364328L8.07114 13.7994Z' fill='%23CB19A4'/%3E%3C/svg%3E");
 		}
 	}

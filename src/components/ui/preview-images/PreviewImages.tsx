@@ -1,14 +1,14 @@
 import NextImage from 'next/image'
 
-import { type HTMLAttributes } from 'react'
+import { type ComponentProps } from 'react'
 
 import clsx from 'clsx'
 
 import styles from './PreviewImages.module.scss'
 
-import { type IImage } from '@/types/global'
+import { type IImage } from '@/types'
 
-interface IPreviewImagesProps extends HTMLAttributes<HTMLDivElement> {
+interface IPreviewImagesProps extends ComponentProps<'div'> {
 	images: [IImage] | [IImage, IImage]
 }
 
@@ -26,7 +26,7 @@ export function PreviewImages({ images, className, ...props }: IPreviewImagesPro
 					className={styles.image}
 					quality={100}
 					placeholder='blur'
-				></NextImage>
+				/>
 			))}
 		</div>
 	)

@@ -1,20 +1,32 @@
-import { HTMLAttributes } from 'react'
+import { type ComponentProps } from 'react'
 
 import clsx from 'clsx'
 
 import styles from './List.module.scss'
 
-import { IListItems } from '@/types/global'
-
-interface IListProps extends HTMLAttributes<HTMLDivElement> {
-	items: IListItems
-	listStyle?: 'circle' | 'ticks'
+export interface IListItems {
+	column1: string[]
+	column2?: string[]
 }
 
-export function List({ items, listStyle = 'circle', className, ...props }: IListProps) {
+export enum ENUMListStyle {
+	Circle = 'circle',
+	Ticks = 'ticks'
+}
+
+interface IListProps extends ComponentProps<'div'> {
+	items: IListItems
+	listStyle?: ENUMListStyle
+}
+
+export function List({ items, listStyle = ENUMListStyle.Circle, className, ...props }: IListProps) {
 	return (
 		<div
-			className={clsx(styles.listsContainer, listStyle === 'ticks' && styles.ticks, className)}
+			className={clsx(
+				styles.listsContainer,
+				listStyle === ENUMListStyle.Ticks && styles.ticks,
+				className
+			)}
 			{...props}
 		>
 			<ul className={styles.list}>
