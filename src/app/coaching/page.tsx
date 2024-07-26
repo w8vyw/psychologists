@@ -1,19 +1,17 @@
-import { type Metadata } from 'next'
-
 import styles from './page.module.scss'
 
-import { Heading } from '@/components/ui/heading/Heading'
-import { List } from '@/components/ui/list/List'
-import { Message } from '@/components/ui/message/Message'
-import { PreviewImages } from '@/components/ui/preview-images/PreviewImages'
-import { Section } from '@/components/ui/section/Section'
-import { Text } from '@/components/ui/text/Text'
-import { Title } from '@/components/ui/title/Title'
-import { Wrapper } from '@/components/ui/wrapper/Wrapper'
-
-import PreviewImage1 from '@/images/coaching-1.webp'
-import PreviewImage2 from '@/images/coaching-2.webp'
 import { type IImage } from '@/types'
+
+import { Heading } from '@/ui/heading/Heading'
+import { Text } from '@/ui/text/Text'
+
+import { List } from '@/shared/list/List'
+
+import { PreviewImages } from '@/components/shared/preview-images/PreviewImages'
+import { Title } from '@/components/ui/title/Title'
+
+import PreviewImage1 from '@/images/coaching/preview/1.webp'
+import PreviewImage2 from '@/images/coaching/preview/2.webp'
 
 const title = 'Коучинг'
 
@@ -30,10 +28,10 @@ const previewImages: [IImage, IImage] = [
 
 export default function Coaching() {
 	return (
-		<Wrapper>
+		<>
 			<PreviewImages images={previewImages} />
 			<Heading
-				headingContent={{
+				data={{
 					title: title
 				}}
 			/>
@@ -63,34 +61,34 @@ export default function Coaching() {
 					клиентом.
 				</p>
 			</Text>
-			<Section className={styles.list}>
-				<Title className={styles.listTitle}>Чаще всего к коучам обращаются, чтобы:</Title>
-				<List
-					items={{
-						column1: [
-							'Улучшить личную жизнь, найти подходящего партнера',
-							'Развить лидерские качества',
-							'Научиться свободно и уверенно общаться с людьми',
-							'Найти прибыльную идею и открыть свой бизнес'
-						],
-						column2: [
-							'Раскрыть творческий потенциал и найти дело по душе',
-							'Решить проблему постоянной нехватки времени',
-							'Станете понимать лучше себя, соответственно, и других.',
-							'Больше зарабатывать и правильно распределять финансы',
-							'Быть более эффективным в профессиональной жизни'
-						]
-					}}
-				/>
-			</Section>
+			<List
+				heading='Чаще всего к коучам обращаются, чтобы:'
+				items={{
+					column1: [
+						'Улучшить личную жизнь, найти подходящего партнера',
+						'Развить лидерские качества',
+						'Научиться свободно и уверенно общаться с людьми',
+						'Найти прибыльную идею и открыть свой бизнес'
+					],
+					column2: [
+						'Раскрыть творческий потенциал и найти дело по душе',
+						'Решить проблему постоянной нехватки времени',
+						'Станете понимать лучше себя, соответственно, и других.',
+						'Больше зарабатывать и правильно распределять финансы',
+						'Быть более эффективным в профессиональной жизни'
+					]
+				}}
+			/>
 			<Text>
-				<p>
-					Длительность коучинговой сессии — <span>60 минут.</span>
-				</p>
-				<p>
-					Стоимость индивидуальной коуч-сессии — <span>3 900 рублей.</span>
-				</p>
+				<div>
+					<p>
+						Длительность коучинговой сессии — <span>60 минут.</span>
+					</p>
+					<p>
+						Стоимость индивидуальной коуч-сессии — <span>3 900 рублей.</span>
+					</p>
+				</div>
 			</Text>
-		</Wrapper>
+		</>
 	)
 }

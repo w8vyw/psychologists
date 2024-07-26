@@ -1,26 +1,21 @@
-import { type Metadata } from 'next'
-
 import styles from './page.module.scss'
 
-import { Heading } from '@/components/ui/heading/Heading'
-import { ENUMListStyle, List } from '@/components/ui/list/List'
-import { Message } from '@/components/ui/message/Message'
-import { PreviewImages } from '@/components/ui/preview-images/PreviewImages'
-import { Section } from '@/components/ui/section/Section'
-import { Text } from '@/components/ui/text/Text'
-import { Title } from '@/components/ui/title/Title'
-
-import PreviewImage from '@/images/therapy/kid.webp'
-import CardImage from '@/images/therapy/product-cards/kid.webp'
 import { type IImage } from '@/types'
 
-import { ProductCard } from '../../../components/ui/product-card/ProductCard'
+import { Heading } from '@/ui/heading/Heading'
+import { Message } from '@/ui/message/Message'
+import { Section } from '@/ui/section/Section'
+import { Text } from '@/ui/text/Text'
+import { Title } from '@/ui/title/Title'
+
+import { EnumListStyle, List } from '@/shared/list/List'
+import { PreviewImages } from '@/shared/preview-images/PreviewImages'
+import { ProductCard } from '@/shared/product-card/ProductCard'
+
+import PreviewImage from '@/images/therapy/kid/preview.webp'
+import CardImage from '@/images/therapy/kid/product-card.webp'
 
 const title = 'Исцеление внутреннего ребенка'
-
-export const metadata: Metadata = {
-	title: 'Групповая психотерапия'
-}
 
 const previewImages: [IImage] = [
 	{
@@ -34,7 +29,7 @@ export default function Kid() {
 		<>
 			<PreviewImages images={previewImages} />
 			<Heading
-				headingContent={{
+				data={{
 					title: title,
 					subtitle: 'Групповая психотерапия'
 				}}
@@ -102,7 +97,7 @@ export default function Kid() {
 					По итогу прохождения психотерапевтической программы Вы:
 				</Title>
 				<List
-					listStyle={ENUMListStyle.Ticks}
+					listStyle={EnumListStyle.Ticks}
 					items={{
 						column1: [
 							'Осознаете, как детские травмы и решения влияют на вашу взрослую жизнь.',

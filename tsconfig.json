@@ -21,16 +21,12 @@
 		"paths": {
 			"@/images/*": ["assets/images/*"],
 			"@/styles/*": ["assets/styles/*"],
-			"@/components/*": ["components/*"],
+			"@/shared/*": ["components/shared/*"],
 			"@/ui/*": ["components/ui/*"],
+			"@/components/*": ["components/*"],
 			"@/*": ["./*"]
 		}
 	},
-	"include": [
-		"next-env.d.ts",
-		"**/*.ts",
-		"**/*.tsx",
-		".next/types/**/*.ts"
-	],
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
 	"exclude": ["node_modules"]
 }

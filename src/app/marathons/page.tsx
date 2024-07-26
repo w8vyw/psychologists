@@ -2,18 +2,19 @@ import NextImage from 'next/image'
 
 import styles from './page.module.scss'
 
-import { Heading } from '@/components/ui/heading/Heading'
-import { List } from '@/components/ui/list/List'
-import { Message } from '@/components/ui/message/Message'
-import { PreviewImages } from '@/components/ui/preview-images/PreviewImages'
-import { Section } from '@/components/ui/section/Section'
-import { Text } from '@/components/ui/text/Text'
-import { Title } from '@/components/ui/title/Title'
-import { Wrapper } from '@/components/ui/wrapper/Wrapper'
-
-import Image1 from '@/images/marathons-2.webp'
-import PreviewImage from '@/images/marathons.webp'
 import { type IImage } from '@/types'
+
+import { Heading } from '@/ui/heading/Heading'
+import { Message } from '@/ui/message/Message'
+import { Text } from '@/ui/text/Text'
+import { Title } from '@/ui/title/Title'
+
+import { List } from '@/shared/list/List'
+
+import { PreviewImages } from '@/components/shared/preview-images/PreviewImages'
+
+import ContentImage1 from '@/images/marathons/content/1.webp'
+import PreviewImage from '@/images/marathons/preview.webp'
 
 const title = 'Моё счастливое тело'
 
@@ -26,10 +27,10 @@ const previewImages: [IImage] = [
 
 export default function Marathons() {
 	return (
-		<Wrapper>
+		<>
 			<PreviewImages images={previewImages} />
 			<Heading
-				headingContent={{
+				data={{
 					title: title,
 					subtitle: 'Онлайн марафон'
 				}}
@@ -66,36 +67,34 @@ export default function Marathons() {
 					изучая себя, свой организм и создавая лучшую версию себя и своего тела.
 				</p>
 			</Text>
-			<Section className={styles.list}>
-				<Title className={styles.listTitle}>Что даст Вам марафон:</Title>
-				<div>
-					<List
-						items={{
-							column1: [
-								'Лучшее понимание себя, своих чувств и своего тела',
-								'Вы начнете двигаться в сторону снижения веса, и в принципе начнете двигаться',
-								'Вы будете обретать комфортное тело и изящные формы',
-								'Вы станете свободнее и легче',
-								'Вы станете свободнее и легче',
-								'Ваша жизнь заиграет новыми красками',
-								'Вы станете более раскрепощенными, уверенными и привлекательными'
-							]
-						}}
-					/>
-					<NextImage
-						className={styles.image}
-						src={Image1}
-						alt=''
-						quality={100}
-						placeholder='blur'
-					/>
-				</div>
-			</Section>
+			<div className={styles.listWithImage}>
+				<List
+					className={styles.list}
+					heading='Что даст Вам марафон:'
+					items={{
+						column1: [
+							'Лучшее понимание себя, своих чувств и своего тела',
+							'Вы начнете двигаться в сторону снижения веса, и в принципе начнете двигаться',
+							'Вы будете обретать комфортное тело и изящные формы',
+							'Вы станете свободнее и легче',
+							'Ваша жизнь заиграет новыми красками',
+							'Вы станете более раскрепощенными, уверенными и привлекательными'
+						]
+					}}
+				/>
+				<NextImage
+					className={styles.image}
+					src={ContentImage1}
+					alt=''
+					placeholder='blur'
+				/>
+			</div>
+
 			<Text>
 				<p>
 					3 недели или 21 день (именно за это время можно сформировать новые полезные привычки).
 					Общая стоимость <span>8000 рублей.</span> Приглашайте подругу или друга, знакомую, коллегу
-					и тогда для вас стоимость в полцены, двое за одну цену, то есть цена для каждого
+					и тогда для вас стоимость в полцены, двое за одну цену, то есть цена для каждого{' '}
 					<span>4000 рублей.</span>
 				</p>
 				<p>
@@ -124,6 +123,6 @@ export default function Marathons() {
 				Вы приняли решение избавиться от лишнего веса! Начинайте прямо сегодня! Делайте выбор в
 				пользу своей счастливой стройности и гармонии!
 			</Message>
-		</Wrapper>
+		</>
 	)
 }

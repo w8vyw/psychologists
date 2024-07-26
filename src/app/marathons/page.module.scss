@@ -1,0 +1,13 @@
+.listWithImage {
+	display: flex;
+	gap: 30px;
+	margin-bottom: 80px;
+
+	.list {
+		margin-bottom: 0;
+	}
+
+	img {
+		margin-top: 80px;
+	}
+}

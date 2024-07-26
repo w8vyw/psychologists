@@ -1,14 +1,14 @@
-import { type PropsWithChildren, type HTMLAttributes } from 'react'
+import { type PropsWithChildren, type ComponentProps } from 'react'
 
 import clsx from 'clsx'
 
 import styles from './Section.module.scss'
 
 export function Section({
-	className,
 	children,
+	className,
 	...props
-}: PropsWithChildren<HTMLAttributes<HTMLElement>>) {
+}: PropsWithChildren<ComponentProps<'section'>>) {
 	return (
 		<section
 			className={clsx(styles.section, className)}

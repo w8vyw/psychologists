@@ -1,16 +1,12 @@
 import Link from 'next/link'
 
-import type { HTMLAttributes } from 'react'
+import { type ComponentProps } from 'react'
 
 import clsx from 'clsx'
 
 import styles from './Logo.module.scss'
 
-interface ILogoProps extends HTMLAttributes<HTMLAnchorElement> {
-	className?: string
-}
-
-export function Logo({ className, ...props }: ILogoProps) {
+export function Logo({ className, ...props }: ComponentProps<'a'>) {
 	return (
 		<Link
 			className={clsx(styles.logo, className)}

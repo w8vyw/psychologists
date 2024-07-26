@@ -13,7 +13,6 @@ import styles from './Navigation.module.scss'
 import { Overlay } from '@/components/ui/overlay/Overlay'
 
 import { useClickOutside } from '@/hooks/useClickOutside'
-import { useIsOtherPage } from '@/hooks/useIsOtherPage'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 import { mobileBreakpoint } from '../Header'
@@ -22,8 +21,8 @@ import links from './links.data'
 import { MenuButton } from './menu-button/MenuButton'
 
 export function Navigation() {
-	const isOtherPage = useIsOtherPage()
 	const pathname = usePathname()
+	const isOtherPage = pathname !== '/'
 	const isMobile = useMediaQuery(`(width <= ${mobileBreakpoint})`)
 
 	const [isMenuActive, setIsMenuActive] = useState<boolean>(false)

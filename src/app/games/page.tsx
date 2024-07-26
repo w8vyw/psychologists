@@ -2,22 +2,20 @@ import NextImage from 'next/image'
 
 import styles from './page.module.scss'
 
-import { Heading } from '@/components/ui/heading/Heading'
-import { type ILinkCardProps } from '@/components/ui/link-card/LinkCard'
-import { LinkCards } from '@/components/ui/link-cards/LinkCards'
-import { List } from '@/components/ui/list/List'
-import { Message } from '@/components/ui/message/Message'
-import { PreviewImages } from '@/components/ui/preview-images/PreviewImages'
-import { Section } from '@/components/ui/section/Section'
-import { Text } from '@/components/ui/text/Text'
-import { Title } from '@/components/ui/title/Title'
-import { Wrapper } from '@/components/ui/wrapper/Wrapper'
-
-import Image1 from '@/images/games/content-1.webp'
-import MoneyCardImage from '@/images/games/money.webp'
-import PreviewImage from '@/images/games/preview.webp'
-import SexualityCardImage from '@/images/games/sexuality.webp'
 import { type IImage } from '@/types'
+
+import { Heading } from '@/ui/heading/Heading'
+import { Text } from '@/ui/text/Text'
+import { Title } from '@/ui/title/Title'
+
+import { type ILinkCardProps } from '@/shared/link-card/LinkCard'
+import { LinkCards } from '@/shared/link-cards/LinkCards'
+import { PreviewImages } from '@/shared/preview-images/PreviewImages'
+
+import ContentImage1 from '@/images/games/content/1.webp'
+import MoneyCardImage from '@/images/games/link-cards/money.webp'
+import SexualityCardImage from '@/images/games/link-cards/sexuality.webp'
+import PreviewImage from '@/images/games/preview.webp'
 
 const title = 'Трансформационные психологические игры'
 
@@ -30,10 +28,10 @@ const previewImages: [IImage] = [
 
 export default function Games() {
 	return (
-		<Wrapper>
+		<>
 			<PreviewImages images={previewImages} />
 			<Heading
-				headingContent={{
+				data={{
 					title: title
 				}}
 			/>
@@ -69,27 +67,28 @@ export default function Games() {
 				<p>Приходите играть, получать ответы на важные вопросы и создавать свой сценарий Жизни!</p>
 				<NextImage
 					className={styles.image}
-					src={Image1}
+					src={ContentImage1}
 					alt=''
-					quality={100}
 					placeholder='blur'
 				/>
-				<p>
-					Игра длится <span>3-4 часа,</span> и это время пролетает как ураган!
-				</p>
-				<p>
-					Количество участников – <span>от 2 до 7 человек.</span>
-				</p>
-				<p>
-					Стоимость участия в игре – <span>2800 руб.</span>
-				</p>
+				<div>
+					<p>
+						Игра длится <span>3-4 часа,</span> и это время пролетает как ураган!
+					</p>
+					<p>
+						Количество участников – <span>от 2 до 7 человек.</span>
+					</p>
+					<p>
+						Стоимость участия в игре – <span>2800 руб.</span>
+					</p>
+				</div>
 			</Text>
 
 			<LinkCards
 				cards={linkCardsData}
 				heading={'Игры, в которые мы с удовольствием с вами поиграем:'}
 			/>
-		</Wrapper>
+		</>
 	)
 }
 const linksPrefix = '/games/'

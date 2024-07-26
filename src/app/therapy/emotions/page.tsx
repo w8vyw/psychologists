@@ -1,25 +1,20 @@
-import { type Metadata } from 'next'
-
 import styles from './page.module.scss'
 
-import { Heading } from '@/components/ui/heading/Heading'
-import { ENUMListStyle, List } from '@/components/ui/list/List'
-import { Message } from '@/components/ui/message/Message'
-import { PreviewImages } from '@/components/ui/preview-images/PreviewImages'
-import { ProductCard } from '@/components/ui/product-card/ProductCard'
-import { Section } from '@/components/ui/section/Section'
-import { Text } from '@/components/ui/text/Text'
-import { Title } from '@/components/ui/title/Title'
-
-import PreviewImage from '@/images/therapy/emotions.webp'
-import CardImage from '@/images/therapy/product-cards/emotions.webp'
 import { type IImage } from '@/types'
 
-const title = 'Эмоции – перезагрузка'
+import { Heading } from '@/ui/heading/Heading'
+import { Message } from '@/ui/message/Message'
+import { Text } from '@/ui/text/Text'
+import { Title } from '@/ui/title/Title'
 
-export const metadata: Metadata = {
-	title: 'Групповая психотерапия'
-}
+import { EnumListStyle, List } from '@/shared/list/List'
+import { PreviewImages } from '@/shared/preview-images/PreviewImages'
+import { ProductCard } from '@/shared/product-card/ProductCard'
+
+import PreviewImage from '@/images/therapy/emotions/preview.webp'
+import CardImage from '@/images/therapy/emotions/product-card.webp'
+
+const title = 'Эмоции – перезагрузка'
 
 const previewImages: [IImage] = [
 	{
@@ -33,7 +28,7 @@ export default function Emotions() {
 		<>
 			<PreviewImages images={previewImages} />
 			<Heading
-				headingContent={{
+				data={{
 					title: title,
 					subtitle: 'Групповая психотерапия'
 				}}
@@ -83,30 +78,26 @@ export default function Emotions() {
 					выход! Опираясь на собственные чувства и обретая гармонию внутри можно многого добиться!
 				</p>
 			</Text>
-			<Section className={styles.list}>
-				<Title className={styles.listTitle}>
-					В ходе прохождения групповой психотерапевтической работы Вы:
-				</Title>
-				<List
-					items={{
-						column1: [
-							'Узнаете об основных эмоциях',
-							'Повысите свою стрессоустойчивость',
-							'Научитесь понимать и распознавать свои чувства и эмоции и управлять ими',
-							'Научитесь слышать себя и принимать свои чувства, с заботой и пониманием относиться к себе и другим',
-							'Повысите внутреннюю эмоциональную устойчивость и ресурсность'
-						],
-						column2: [
-							'Освоите навыки саморегуляции',
-							'Сможете конструктивно выражать свои чувства, не нанося вред себе и другим',
-							'Освободитесь от тех эмоций и чувств, которые мешают самореализации, самопроявлению, вашему успеху в жизни, в карьере, в отношениях с другими',
-							'Освободитесь от тех эмоций и чувств, которые мешают самореализации, самопроявлению, вашему успеху в жизни, в карьере, в отношениях с другими',
-							'Будете принимать решения без эмоционального давления',
-							'Обретете целостность и гармонию с собой, с другими людьми, с миром'
-						]
-					}}
-				/>
-			</Section>
+			<List
+				heading='В ходе прохождения групповой психотерапевтической работы Вы:'
+				listStyle={EnumListStyle.Ticks}
+				items={{
+					column1: [
+						'Узнаете об основных эмоциях',
+						'Повысите свою стрессоустойчивость',
+						'Научитесь понимать и распознавать свои чувства и эмоции и управлять ими',
+						'Научитесь слышать себя и принимать свои чувства, с заботой и пониманием относиться к себе и другим',
+						'Повысите внутреннюю эмоциональную устойчивость и ресурсность'
+					],
+					column2: [
+						'Освоите навыки саморегуляции',
+						'Сможете конструктивно выражать свои чувства, не нанося вред себе и другим',
+						'Освободитесь от тех эмоций и чувств, которые мешают самореализации, самопроявлению, вашему успеху в жизни, в карьере, в отношениях с другими',
+						'Будете принимать решения без эмоционального давления',
+						'Обретете целостность и гармонию с собой, с другими людьми, с миром'
+					]
+				}}
+			/>
 			<Message className={styles.message}>
 				Важно освободить место для положительных эмоций, чтобы наслаждаться жизнью и чувствовать
 				себя комфортно! В психотерапевтической группе «Эмоции – перезагрузка» можно безопасно

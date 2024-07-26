@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import NextImage from 'next/image'
+import NextLink from 'next/link'
 
 import { type ComponentProps } from 'react'
 
@@ -15,17 +15,17 @@ export interface ILinkCardProps extends ILink, Omit<ComponentProps<'a'>, 'href'>
 
 export function LinkCard({ href, label, image, className, ...props }: ILinkCardProps) {
 	return (
-		<Link
+		<NextLink
 			href={href}
 			className={clsx(styles.link, className)}
 			{...props}
 		>
 			{label}
-			<Image
+			<NextImage
 				className={styles.image}
 				src={image.imageData}
 				alt={image.alt}
 			/>
-		</Link>
+		</NextLink>
 	)
 }

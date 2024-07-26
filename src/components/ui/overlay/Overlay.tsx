@@ -1,10 +1,10 @@
-import { type HTMLAttributes } from 'react'
+import { type ComponentProps } from 'react'
 
 import clsx from 'clsx'
 
 import styles from './Overlay.module.scss'
 
-interface IOverlayProps extends HTMLAttributes<HTMLDivElement> {
+interface IOverlayProps extends ComponentProps<'div'> {
 	isActive?: boolean
 }
 

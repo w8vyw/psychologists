@@ -5,6 +5,7 @@ import clsx from 'clsx'
 
 import '@/styles/global.scss'
 
+import { Wrapper } from '../ui/wrapper/Wrapper'
 import { Header } from './header/Header'
 import { ToTop } from './to-top/ToTop'
 
@@ -41,7 +42,9 @@ export default function Layout({
 		>
 			<body className={clsx(inter.className, tenorSans.variable)}>
 				<Header />
-				<main>{children}</main>
+				<main>
+					<Wrapper>{children}</Wrapper>
+				</main>
 				<ToTop />
 			</body>
 		</html>

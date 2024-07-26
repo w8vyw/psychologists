@@ -1,16 +1,17 @@
-import { type Metadata } from 'next'
-
 import styles from './page.module.scss'
 
-import { Heading } from '@/components/ui/heading/Heading'
-import { type ILinkCardProps } from '@/components/ui/link-card/LinkCard'
-import { LinkCards } from '@/components/ui/link-cards/LinkCards'
-import { List } from '@/components/ui/list/List'
-import { Message } from '@/components/ui/message/Message'
-import { PreviewImages } from '@/components/ui/preview-images/PreviewImages'
-import { Section } from '@/components/ui/section/Section'
-import { Text } from '@/components/ui/text/Text'
-import { Title } from '@/components/ui/title/Title'
+import { type IImage } from '@/types'
+
+import { Heading } from '@/ui/heading/Heading'
+import { Message } from '@/ui/message/Message'
+import { Text } from '@/ui/text/Text'
+import { Title } from '@/ui/title/Title'
+
+import { LinkCards } from '@/shared/link-cards/LinkCards'
+import { List } from '@/shared/list/List'
+import { PreviewImages } from '@/shared/preview-images/PreviewImages'
+
+import { type ILinkCardProps } from '@/components/shared/link-card/LinkCard'
 
 import EmotionsCardImage from '@/images/therapy/link-cards/emotions.webp'
 import GirlsCardImage from '@/images/therapy/link-cards/girls.webp'
@@ -18,28 +19,23 @@ import KidCardImage from '@/images/therapy/link-cards/kid.webp'
 import SlimnessCardImage from '@/images/therapy/link-cards/slimness.webp'
 import YourselfCardImage from '@/images/therapy/link-cards/yourself.webp'
 import PreviewImage from '@/images/therapy/preview.webp'
-import { type IImage } from '@/types'
 
-export const metadata: Metadata = {
-	title: 'Групповая психотерапия'
-}
+const title = 'Групповая психотерапия'
 
 const previewImages: [IImage] = [
 	{
 		imageData: PreviewImage,
-		alt: 'Групповая психотерапия'
+		alt: ''
 	}
 ]
-
-const linksPrefix = '/therapy/'
 
 export default function Therapy() {
 	return (
 		<>
 			<PreviewImages images={previewImages} />
 			<Heading
-				headingContent={{
-					title: 'Групповая психотерапия'
+				data={{
+					title: title
 				}}
 			/>
 			<Text className={styles.text}>
@@ -66,42 +62,42 @@ export default function Therapy() {
 					том, как одногруппники переживают подобные или совсем непохожие ситуации.
 				</p>
 			</Text>
-			<Section className={styles.list}>
-				<Title className={styles.listTitle}>Цели групповой психотерапии</Title>
-				<List
-					items={{
-						column1: [
-							'устранить негативные симптомы',
-							'выявить проблему каждого участника, помочь понять и изменить свое состояние',
-							'улучшить коммуникативные навыки',
-							'улучшить общий психоэмоциональный фон',
-							'изменить привычные, но малоэффективные или деструктивные схемы мышления и поведения'
-						],
-						column2: [
-							'облегчить адаптацию в социуме',
-							'раскрыть личностный потенциал каждого участника группы и найти пути самореализации',
-							'принять ответственность за свой выбор',
-							'выработать позитивную жизненную позицию',
-							'повысить работоспособность и способствовать карьерному росту'
-						]
-					}}
-				/>
-			</Section>
+			<List
+				heading='Цели групповой психотерапии'
+				items={{
+					column1: [
+						'устранить негативные симптомы',
+						'выявить проблему каждого участника, помочь понять и изменить свое состояние',
+						'улучшить коммуникативные навыки',
+						'улучшить общий психоэмоциональный фон',
+						'изменить привычные, но малоэффективные или деструктивные схемы мышления и поведения'
+					],
+					column2: [
+						'облегчить адаптацию в социуме',
+						'раскрыть личностный потенциал каждого участника группы и найти пути самореализации',
+						'принять ответственность за свой выбор',
+						'выработать позитивную жизненную позицию',
+						'повысить работоспособность и способствовать карьерному росту'
+					]
+				}}
+			/>
 			<Message className={styles.message}>
 				Благодаря многоуровневому воздействию психотерапевтическая группа обладает мощным
 				потенциалом и эффективностью!
 			</Message>
 			<LinkCards
+				heading='Психотерапевтические группы'
 				cards={linkCardsData}
-				heading={'Психотерапевтические группы'}
 			/>
 		</>
 	)
 }
 
+const linkPrefix = '/therapy/'
+
 const linkCardsData: ILinkCardProps[] = [
 	{
-		href: `${linksPrefix}kid`,
+		href: `${linkPrefix}kid`,
 		label: 'Исцеление внутреннего ребенка',
 		image: {
 			imageData: KidCardImage,
@@ -109,7 +105,7 @@ const linkCardsData: ILinkCardProps[] = [
 		}
 	},
 	{
-		href: `${linksPrefix}girls`,
+		href: `${linkPrefix}girls`,
 		label: 'Между нами девочками',
 		image: {
 			imageData: GirlsCardImage,
@@ -117,7 +113,7 @@ const linkCardsData: ILinkCardProps[] = [
 		}
 	},
 	{
-		href: `${linksPrefix}yourself`,
+		href: `${linkPrefix}yourself`,
 		label: 'Обретая себя',
 		image: {
 			imageData: YourselfCardImage,
@@ -125,7 +121,7 @@ const linkCardsData: ILinkCardProps[] = [
 		}
 	},
 	{
-		href: `${linksPrefix}emotions`,
+		href: `${linkPrefix}emotions`,
 		label: 'Эмоции перезагрузка',
 		image: {
 			imageData: EmotionsCardImage,
@@ -133,7 +129,7 @@ const linkCardsData: ILinkCardProps[] = [
 		}
 	},
 	{
-		href: `${linksPrefix}slimness`,
+		href: `${linkPrefix}slimness`,
 		label: 'Счастливая стройность',
 		image: {
 			imageData: SlimnessCardImage,

@@ -1,25 +1,21 @@
-import { type Metadata } from 'next'
-
 import styles from './page.module.scss'
 
-import { Heading } from '@/components/ui/heading/Heading'
-import { ENUMListStyle, List } from '@/components/ui/list/List'
-import { Message } from '@/components/ui/message/Message'
-import { PreviewImages } from '@/components/ui/preview-images/PreviewImages'
-import { ProductCard } from '@/components/ui/product-card/ProductCard'
-import { Section } from '@/components/ui/section/Section'
-import { Text } from '@/components/ui/text/Text'
-import { Title } from '@/components/ui/title/Title'
-
-import CardImage from '@/images/therapy/product-cards/yourself.webp'
-import PreviewImage from '@/images/therapy/yourself.webp'
 import { type IImage } from '@/types'
 
-const title = 'Обретая себя'
+import { Heading } from '@/ui/heading/Heading'
+import { Message } from '@/ui/message/Message'
+import { Section } from '@/ui/section/Section'
+import { Text } from '@/ui/text/Text'
+import { Title } from '@/ui/title/Title'
 
-export const metadata: Metadata = {
-	title: 'Групповая психотерапия'
-}
+import { EnumListStyle, List } from '@/shared/list/List'
+import { PreviewImages } from '@/shared/preview-images/PreviewImages'
+import { ProductCard } from '@/shared/product-card/ProductCard'
+
+import PreviewImage from '@/images/therapy/yourself/preview.webp'
+import CardImage from '@/images/therapy/yourself/product-card.webp'
+
+const title = 'Обретая себя'
 
 const previewImages: [IImage] = [
 	{
@@ -33,7 +29,7 @@ export default function Yourself() {
 		<>
 			<PreviewImages images={previewImages} />
 			<Heading
-				headingContent={{
+				data={{
 					title: title,
 					subtitle: 'Групповая психотерапия'
 				}}
@@ -76,31 +72,26 @@ export default function Yourself() {
 					каждого зависимого.
 				</p>
 			</Text>
-			<Section className={styles.list}>
-				<Title className={styles.listTitle}>
-					В ходе прохождения групповой психотерапевтической работы Вы:
-				</Title>
-				<List
-					items={{
-						column1: [
-							'Вы обретете желание жить по-новому!',
-							'Вы избавитесь от шаблонных привычек мышления!',
-							'Наладятся взаимоотношения с родными и близкими!',
-							'Освободитесь от старых обид!'
-						],
-						column2: [
-							'Сможете избавиться от постоянной борьбы и контроля!',
-							'Начнете жить, руководствуясь общечеловеческими принципами!',
-							'Вы получите личностное развитие и вновь обретете себя!'
-						]
-					}}
-				/>
-			</Section>
+			<List
+				heading='В ходе прохождения групповой психотерапевтической работы Вы:'
+				items={{
+					column1: [
+						'Вы обретете желание жить по-новому!',
+						'Вы избавитесь от шаблонных привычек мышления!',
+						'Наладятся взаимоотношения с родными и близкими!',
+						'Освободитесь от старых обид!'
+					],
+					column2: [
+						'Сможете избавиться от постоянной борьбы и контроля!',
+						'Начнете жить, руководствуясь общечеловеческими принципами!',
+						'Вы получите личностное развитие и вновь обретете себя!'
+					]
+				}}
+			/>
 			<Message className={styles.message}>
 				Остановить прием алкоголя и наркотиков сложная, но посильная задача, гораздо труднее
 				оставаться трезвым и чистым на протяжении всей жизни и быть счастливым.
 			</Message>
-
 			<Text>
 				Начните прямо сегодня! Делайте выбор в пользу своей здоровой, благополучной и свободной
 				жизни!

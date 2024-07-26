@@ -1,26 +1,22 @@
-import { type Metadata } from 'next'
-
 import styles from './page.module.scss'
 
-import { Heading } from '@/components/ui/heading/Heading'
-import { ENUMListStyle, List } from '@/components/ui/list/List'
-import { Message } from '@/components/ui/message/Message'
-import { PreviewImages } from '@/components/ui/preview-images/PreviewImages'
-import { Section } from '@/components/ui/section/Section'
-import { Text } from '@/components/ui/text/Text'
-import { Title } from '@/components/ui/title/Title'
-
-import PreviewImage from '@/images/therapy/girls.webp'
-import CardImage from '@/images/therapy/product-cards/girls.webp'
 import { type IImage } from '@/types'
 
-import { ProductCard } from '../../../components/ui/product-card/ProductCard'
+import { Heading } from '@/ui/heading/Heading'
+import { Message } from '@/ui/message/Message'
+import { Section } from '@/ui/section/Section'
+import { Text } from '@/ui/text/Text'
+import { Title } from '@/ui/title/Title'
+
+import { EnumListStyle, List } from '@/shared/list/List'
+import { PreviewImages } from '@/shared/preview-images/PreviewImages'
+
+import PreviewImage from '@/images/therapy/girls/preview.webp'
+import CardImage from '@/images/therapy/girls/product-card.webp'
+
+import { ProductCard } from '../../../components/shared/product-card/ProductCard'
 
 const title = 'Между нами девочками'
-
-export const metadata: Metadata = {
-	title: 'Групповая психотерапия'
-}
 
 const previewImages: [IImage] = [
 	{
@@ -34,7 +30,7 @@ export default function Girls() {
 		<>
 			<PreviewImages images={previewImages} />
 			<Heading
-				headingContent={{
+				data={{
 					title: title,
 					subtitle: 'Групповая психотерапия'
 				}}
@@ -75,35 +71,31 @@ export default function Girls() {
 					различных аспектах жизни.
 				</p>
 			</Text>
-			<Section className={styles.list}>
-				<Title className={styles.listTitle}>
-					В ходе прохождения групповой психотерапевтической работы Вы:
-				</Title>
-				<List
-					items={{
-						column1: [
-							'Научитесь противостоять стрессу и тревогам.',
-							'Увидите под другим углом свою жизненную ситуацию.',
-							'Сможете говорить «нет» и обозначать свои личные границы.',
-							'Перестанете застревать на негативных мыслях.',
-							'Сможете легко и просто, без оглядки на других высказывать свое мнение.',
-							'Осознаете свои истинные желания и потребности.'
-						],
-						column2: [
-							'Обретёте уверенность и душевный покой.',
-							'Освоите проработки своих чувств и эмоций.',
-							'Станете понимать лучше себя, соответственно, и других.',
-							'Сможете делать так, чтобы было меньше раздражения и усталости, а больше жизненной энергии.',
-							'Обретёте гармонию с собой, с окружающими, с миром.',
-							'Откроете новые грани себя.'
-						]
-					}}
-				/>
-			</Section>
+			<List
+				heading='	В ходе прохождения групповой психотерапевтической работы Вы:'
+				listStyle={EnumListStyle.Ticks}
+				items={{
+					column1: [
+						'Научитесь противостоять стрессу и тревогам.',
+						'Увидите под другим углом свою жизненную ситуацию.',
+						'Сможете говорить «нет» и обозначать свои личные границы.',
+						'Перестанете застревать на негативных мыслях.',
+						'Сможете легко и просто, без оглядки на других высказывать свое мнение.',
+						'Осознаете свои истинные желания и потребности.'
+					],
+					column2: [
+						'Обретёте уверенность и душевный покой.',
+						'Освоите проработки своих чувств и эмоций.',
+						'Станете понимать лучше себя, соответственно, и других.',
+						'Сможете делать так, чтобы было меньше раздражения и усталости, а больше жизненной энергии.',
+						'Обретёте гармонию с собой, с окружающими, с миром.',
+						'Откроете новые грани себя.'
+					]
+				}}
+			/>
 			<Message className={styles.message}>
 				Проработав свои затруднения, вам откроются новые возможности на пути к вашим достижениям!
 			</Message>
-
 			<Text>
 				Зачастую, когда женщина обращается за советом к подругам или родственникам, каждый из них
 				дает совет через призму собственного восприятия ситуации и, естественно, что никто из

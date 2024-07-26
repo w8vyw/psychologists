@@ -1,15 +1,15 @@
 import styles from './page.module.scss'
 
-import { Heading } from '@/components/ui/heading/Heading'
-import { List } from '@/components/ui/list/List'
-import { PreviewImages } from '@/components/ui/preview-images/PreviewImages'
-import { Section } from '@/components/ui/section/Section'
-import { Text } from '@/components/ui/text/Text'
-import { Title } from '@/components/ui/title/Title'
-import { Wrapper } from '@/components/ui/wrapper/Wrapper'
+import { type IImage } from '@/types'
+
+import { Heading } from '@/ui/heading/Heading'
+import { Text } from '@/ui/text/Text'
+import { Title } from '@/ui/title/Title'
+
+import { List } from '@/shared/list/List'
+import { PreviewImages } from '@/shared/preview-images/PreviewImages'
 
 import PreviewImage from '@/images/arrangements.webp'
-import { type IImage } from '@/types'
 
 const title = 'Расстановки'
 
@@ -22,10 +22,10 @@ const previewImages: [IImage] = [
 
 export default function Arrangements() {
 	return (
-		<Wrapper>
+		<>
 			<PreviewImages images={previewImages} />
 			<Heading
-				headingContent={{
+				data={{
 					title: title
 				}}
 			/>
@@ -49,32 +49,32 @@ export default function Arrangements() {
 					прорабатывают в ходе участия в расстановке в роли заместителя свои трудности.
 				</p>
 			</Text>
-			<Section className={styles.list}>
-				<Title className={styles.listTitle}>Метод системных расстановок позволяет:</Title>
-				<List
-					items={{
-						column1: [
-							'Выявить причинно-следственные связи между текущей проблемой и её первопричиной.',
-							'Закрыть резонанс, влияющий на отношения в паре, в детско-родительских отношениях в любом возрасте.',
-							'Разрешить любую проблематику в сфере отношений, денег, бизнеса, предназначения, поиска себя, самореализации и т.д.',
-							'Проработать детские травмы.'
-						]
-					}}
-				/>
-			</Section>
+			<List
+				heading='Метод системных расстановок позволяет:'
+				items={{
+					column1: [
+						'Выявить причинно-следственные связи между текущей проблемой и её первопричиной.',
+						'Закрыть резонанс, влияющий на отношения в паре, в детско-родительских отношениях в любом возрасте.',
+						'Разрешить любую проблематику в сфере отношений, денег, бизнеса, предназначения, поиска себя, самореализации и т.д.',
+						'Проработать детские травмы.'
+					]
+				}}
+			/>
 			<Text>
 				<Title>Стоимость:</Title>
-				<p>
-					Для клиента с запросом индивидуальная онлайн расстановка без заместителей –
-					<span>3900 рублей.</span>
-				</p>
-				<p>
-					Для клиента с запросом очная расстановка с заместителями – <span>5000 рублей.</span>
-				</p>
-				<p>
-					Участие для заместителей/наблюдателей – <span>500 рублей.</span>
-				</p>
+				<div>
+					<p>
+						Для клиента с запросом индивидуальная онлайн расстановка без заместителей –
+						<span>3900 рублей.</span>
+					</p>
+					<p>
+						Для клиента с запросом очная расстановка с заместителями – <span>5000 рублей.</span>
+					</p>
+					<p>
+						Участие для заместителей/наблюдателей – <span>500 рублей.</span>
+					</p>
+				</div>
 			</Text>
-		</Wrapper>
+		</>
 	)
 }
