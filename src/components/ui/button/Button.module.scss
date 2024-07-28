@@ -1,0 +1,25 @@
+.button {
+	padding: 20px 40px;
+	border-radius: 10px;
+	box-shadow: 0 3px 2px 0 #dfb751;
+
+	background: linear-gradient(360deg, #ffe296 0%, #ffcb46 23.44%, #fff2c6 100%);
+
+	color: #755400;
+
+	&.medium {
+		padding: 27px 57px;
+	}
+
+	&.large {
+		padding: 27px 88px;
+	}
+
+	&.blue {
+		box-shadow: 0 3px 2px 0 #538daa;
+
+		background: linear-gradient(360deg, #87caec 0%, #29b6ff 23.44%, #c0eaff 100%), rgb(0 0 0 / 20%);
+
+		color: #2d4168;
+	}
+}

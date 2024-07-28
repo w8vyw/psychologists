@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 	formatDetection: { telephone: false },
 
 	alternates: {
-		canonical: '/'
+		canonical: ''
 	},
 
 	verification: {

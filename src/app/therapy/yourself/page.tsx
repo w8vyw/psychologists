@@ -74,6 +74,7 @@ export default function Yourself() {
 			</Text>
 			<List
 				heading='В ходе прохождения групповой психотерапевтической работы Вы:'
+				listStyle={EnumListStyle.Ticks}
 				items={{
 					column1: [
 						'Вы обретете желание жить по-новому!',
