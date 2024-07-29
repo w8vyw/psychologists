@@ -2,6 +2,7 @@ import styles from './page.module.scss'
 
 import { type IImage } from '@/types'
 
+import { Button } from '@/ui/button/Button'
 import { Heading } from '@/ui/heading/Heading'
 import { Text } from '@/ui/text/Text'
 import { Title } from '@/ui/title/Title'
@@ -75,6 +76,7 @@ export default function Arrangements() {
 					</p>
 				</div>
 			</Text>
+			<Button>Записаться</Button>
 		</>
 	)
 }

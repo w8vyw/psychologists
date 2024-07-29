@@ -4,6 +4,7 @@ import styles from './page.module.scss'
 
 import { type IImage } from '@/types'
 
+import { Button } from '@/ui/button/Button'
 import { Heading } from '@/ui/heading/Heading'
 import { Message } from '@/ui/message/Message'
 import { Text } from '@/ui/text/Text'
@@ -89,7 +90,6 @@ export default function Marathons() {
 					placeholder='blur'
 				/>
 			</div>
-
 			<Text>
 				<p>
 					3 недели или 21 день (именно за это время можно сформировать новые полезные привычки).
@@ -122,6 +122,7 @@ export default function Marathons() {
 				Вы приняли решение избавиться от лишнего веса! Начинайте прямо сегодня! Делайте выбор в
 				пользу своей счастливой стройности и гармонии!
 			</Message>
+			<Button>Записаться</Button>
 		</>
 	)
 }

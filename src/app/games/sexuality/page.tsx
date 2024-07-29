@@ -2,6 +2,7 @@ import styles from './page.module.scss'
 
 import { type IImage } from '@/types'
 
+import { Button } from '@/ui/button/Button'
 import { Heading } from '@/ui/heading/Heading'
 import { Section } from '@/ui/section/Section'
 import { Text } from '@/ui/text/Text'
@@ -63,6 +64,7 @@ export default function Sexuality() {
 					]
 				}}
 			/>
+			<Button>Записаться</Button>
 		</>
 	)
 }
