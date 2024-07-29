@@ -1,6 +1,7 @@
 .slogan {
 	font-family: var(--tenor-sans);
-	font-size: 35px;
+	font-size: clamp(24px, 4.5vw, 36px);
+	line-height: 1.2;
 	text-align: center;
 
 	span {

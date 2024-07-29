@@ -1,13 +1,29 @@
+@import '@/styles/variables';
+
 .listWithImage {
 	display: flex;
+	align-items: flex-start;
 	gap: 30px;
-	margin-bottom: 80px;
+	margin-bottom: var(--margin-b);
+
+	@media (width <= $lg) {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	@media (width <= $sm) {
+		gap: 15px;
+	}
 
 	.list {
 		margin-bottom: 0;
 	}
 
 	img {
-		margin-top: 80px;
+		min-width: 367px;
+
+		@media (width <= $sm) {
+			min-width: auto;
+		}
 	}
 }

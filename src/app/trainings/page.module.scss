@@ -1,6 +1,17 @@
+@import '@/styles/variables';
+
 .textWithImage {
 	div {
 		display: flex;
-		gap: 50px;
+		align-items: flex-start;
+		gap: clamp(10px, 2.5vw, 30px);
+
+		@media (width <=$md) {
+			flex-direction: column;
+		}
+
+		.image {
+			min-width: 300px;
+		}
 	}
 }

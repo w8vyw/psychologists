@@ -34,7 +34,7 @@ export function List({
 			className={clsx(styles.list, className)}
 			{...props}
 		>
-			<Title className={styles.heading}>{heading}</Title>
+			{typeof heading !== 'undefined' && <Title className={styles.heading}>{heading}</Title>}
 			<div className={clsx(styles.lists, listStyle === EnumListStyle.Ticks && styles.ticks)}>
 				<ul>
 					{items.column1.map(item => (

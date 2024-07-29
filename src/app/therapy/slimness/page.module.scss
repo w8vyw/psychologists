@@ -1,5 +1,10 @@
+@import '@/styles/variables';
+
 .lists {
-	margin-bottom: 80px;
+	display: flex;
+	flex-direction: column;
+	gap: clamp(20px, 3.5vw, 40px);
+	margin-bottom: var(--margin-b);
 
 	.list {
 		margin-bottom: 0;
@@ -9,10 +14,14 @@
 .imagesBlock {
 	display: flex;
 	justify-content: center;
-	gap: 30px;
-	margin-bottom: 80px;
+	gap: clamp(15px, 3vw, 30px);
+	margin-bottom: var(--margin-b);
+
+	@media (width <= $md) {
+		flex-direction: column;
+	}
 }
 
 .slogan {
-	margin-bottom: 80px;
+	margin-bottom: var(--margin-b);
 }
