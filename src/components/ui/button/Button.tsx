@@ -10,25 +10,25 @@ export enum EnumButtonSizes {
 	Large
 }
 
-export enum EnumButtonColors {
+export enum EnumButtonTests {
 	Yellow,
 	Blue
 }
 
 interface IButtonProps extends ComponentPropsWithoutRef<'button'> {
 	size?: EnumButtonSizes
-	color?: EnumButtonColors
+	test?: EnumButtonTests
 	children?: ReactNode
 }
 
-export function Button({ size, color, children, className, ...props }: IButtonProps) {
+export function Button({ size, test, children, className, ...props }: IButtonProps) {
 	return (
 		<button
 			className={clsx(
 				styles.button,
 				size === EnumButtonSizes.Medium && styles.medium,
 				size === EnumButtonSizes.Large && styles.large,
-				color === EnumButtonColors.Blue && styles.blue,
+				test === EnumButtonTests.Blue && styles.blue,
 				className
 			)}
 			{...props}

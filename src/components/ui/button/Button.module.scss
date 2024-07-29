@@ -1,3 +1,5 @@
+@import '@/styles/variables';
+
 .button {
 	padding: 20px 40px;
 	border-radius: 10px;
@@ -6,8 +8,16 @@
 	background: linear-gradient(360deg, #ffe296 0%, #ffcb46 23.44%, #fff2c6 100%);
 
 	color: #755400;
-	font-size: 20px;
+	font-size: clamp(18px, 3vw, 22px);
 	line-height: 1.2;
+
+	@media (width <=$lg) {
+		padding: 15px 30px;
+	}
+
+	@media (width <=$md) {
+		padding: 10px 20px;
+	}
 
 	&.medium {
 		padding: 27px 57px;
