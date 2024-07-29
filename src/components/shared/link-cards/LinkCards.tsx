@@ -1,4 +1,4 @@
-import { type ComponentProps } from 'react'
+import { type ComponentPropsWithoutRef } from 'react'
 
 import clsx from 'clsx'
 
@@ -6,7 +6,7 @@ import styles from './LinkCards.module.scss'
 
 import { type ILinkCardProps, LinkCard } from '../link-card/LinkCard'
 
-export interface ILinkCardsProps extends ComponentProps<'section'> {
+export interface ILinkCardsProps extends ComponentPropsWithoutRef<'section'> {
 	heading: string
 	cards: ILinkCardProps[]
 }

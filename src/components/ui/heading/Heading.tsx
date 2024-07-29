@@ -1,4 +1,4 @@
-import { type ComponentProps } from 'react'
+import { type ComponentPropsWithoutRef } from 'react'
 
 import clsx from 'clsx'
 
@@ -9,7 +9,7 @@ export interface IData {
 	subtitle?: string
 }
 
-interface IHeadingProps extends ComponentProps<'div'> {
+interface IHeadingProps extends ComponentPropsWithoutRef<'div'> {
 	data: IData
 }
 

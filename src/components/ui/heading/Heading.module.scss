@@ -1,18 +1,21 @@
 .heading {
+	text-wrap: balance;
+
 	display: flex;
 	flex-direction: column;
+	gap: 6px;
 
-	margin-bottom: 80px;
+	margin-bottom: var(--margin-b);
 
 	font-family: var(--tenor-sans);
 
-	line-height: 1;
+	line-height: 1.2;
 
 	.title {
-		font-size: 50px;
+		font-size: clamp(36px, 6vw, 50px);
 	}
 
 	.subtitle {
-		font-size: 40px;
+		font-size: clamp(24px, 4.8vw, 40px);
 	}
 }

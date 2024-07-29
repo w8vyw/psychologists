@@ -1,4 +1,4 @@
-import { type ComponentProps } from 'react'
+import { type ComponentPropsWithoutRef } from 'react'
 
 import clsx from 'clsx'
 
@@ -16,7 +16,7 @@ export enum EnumListStyle {
 	Ticks
 }
 
-interface IListProps extends ComponentProps<'section'> {
+interface IListProps extends ComponentPropsWithoutRef<'section'> {
 	heading?: string
 	listStyle?: EnumListStyle
 	items: IListItems

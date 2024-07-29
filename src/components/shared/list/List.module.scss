@@ -1,28 +1,34 @@
+@import '@/styles/variables';
+
 .list {
-	margin-bottom: 80px;
+	margin-bottom: var(--margin-b);
 
 	.heading {
-		margin-bottom: 40px;
+		margin-bottom: clamp(20px, 3.5vw, 40px);
 	}
 
 	.lists {
 		display: flex;
-		gap: 60px;
+		flex-wrap: wrap;
+		gap: clamp(20px, 5vw, 60px);
+
+		@media (width <= $md) {
+			flex-direction: column;
+			gap: 20px;
+		}
 
 		ul {
 			display: flex;
 			flex-direction: column;
-			gap: 40px;
-			flex-grow: 1;
-			flex-basis: calc(50% - 20px);
-			max-width: 100%;
+			gap: clamp(20px, 3.5vw, 40px);
 
-			font-size: 22px;
+			flex-grow: 1;
+			flex-basis: calc(50% - 30px);
 
 			.item {
 				position: relative;
 
-				padding-left: 40px;
+				padding-left: 35px;
 
 				&::before {
 					content: '';
@@ -47,6 +53,8 @@
 
 		&.ticks {
 			.item {
+				padding-left: 38px;
+
 				&::before {
 					width: 23px;
 					height: 17px;

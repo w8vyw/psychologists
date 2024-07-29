@@ -1,4 +1,4 @@
-import { type PropsWithChildren, type ComponentProps } from 'react'
+import { type PropsWithChildren, type ComponentPropsWithoutRef } from 'react'
 
 import clsx from 'clsx'
 
@@ -8,7 +8,7 @@ export function Section({
 	children,
 	className,
 	...props
-}: PropsWithChildren<ComponentProps<'section'>>) {
+}: PropsWithChildren<ComponentPropsWithoutRef<'section'>>) {
 	return (
 		<section
 			className={clsx(styles.section, className)}

@@ -1,7 +1,9 @@
+@import '@/styles/variables';
+
 .message {
 	position: relative;
 
-	margin-bottom: 80px;
+	margin-bottom: var(--margin-b);
 
 	padding: 30px 30px 30px 89px;
 	border-radius: 10px;
@@ -9,8 +11,9 @@
 
 	background: #faeef8;
 
-	font-size: 22px;
-	line-height: 1.5;
+	@media (width <= $md) {
+		padding: 15px;
+	}
 
 	&::before {
 		content: '';
@@ -27,5 +30,9 @@
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
+
+		@media (width <= $md) {
+			display: none;
+		}
 	}
 }

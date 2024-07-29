@@ -1,7 +1,7 @@
 import NextImage from 'next/image'
 import NextLink from 'next/link'
 
-import { type ComponentProps } from 'react'
+import { type ComponentPropsWithoutRef } from 'react'
 
 import clsx from 'clsx'
 
@@ -9,7 +9,7 @@ import styles from './LinkCard.module.scss'
 
 import { type IImage, type ILink } from '@/types'
 
-export interface ILinkCardProps extends ILink, Omit<ComponentProps<'a'>, 'href'> {
+export interface ILinkCardProps extends ILink, Omit<ComponentPropsWithoutRef<'a'>, 'href'> {
 	image: IImage
 }
 

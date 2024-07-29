@@ -1,3 +1,9 @@
+img {
+	height: auto;
+	object-fit: cover;
+	object-position: center;
+}
+
 a,
 button {
 	cursor: pointer;
@@ -23,8 +29,8 @@ button {
 
 html,
 body {
-	text-rendering: optimizespeed;
 	text-size-adjust: none;
+	text-rendering: optimizespeed;
 
 	min-height: 100dvh;
 	overflow-x: hidden;
@@ -32,7 +38,7 @@ body {
 	color: black;
 	font-size: 18px;
 	font-weight: 400;
-	line-height: 1.2;
+	line-height: 1.6;
 }
 
 html:focus-within {

@@ -1,11 +1,8 @@
 .text {
 	display: flex;
 	flex-direction: column;
-	gap: 30px;
-	margin-bottom: 80px;
-
-	font-size: 22px;
-	line-height: 1.5;
+	gap: clamp(10px, 2.5vw, 30px);
+	margin-bottom: var(--margin-b);
 
 	span {
 		font-weight: 600;

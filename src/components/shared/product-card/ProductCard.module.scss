@@ -1,3 +1,5 @@
+@import '@/styles/variables';
+
 .card {
 	--gray: #69707d;
 
@@ -8,56 +10,59 @@
 
 	background: white;
 
+	font-size: clamp(14px, 3vw, 22px);
+
+	@media (width <= $lg) {
+		flex-direction: column;
+		border-radius: 10px;
+	}
+
+	.image {
+		@media (width <= $lg) {
+			display: none;
+		}
+	}
+
 	.content {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
 		flex-grow: 1;
 		padding: 60px 80px;
 
+		@media (width <= $lg) {
+			gap: 20px;
+			padding: 25px;
+		}
+
 		.name {
-			max-width: 600px;
-			margin-bottom: 30px;
+			text-wrap: balance;
 
-			color: var(--gray);
-			font-size: 35px;
+			font-size: clamp(28px, 6vw, 36px);
 			font-weight: 500;
+			line-height: 1.2;
 
-			span {
-				color: var(--text);
-			}
-
-			.status {
-				position: relative;
-				bottom: 5px;
-
-				margin-left: 15px;
-
-				padding: 4px 14px 5px;
-				border-radius: 28px;
-
-				background: var(--green);
-
-				color: white;
-				font-size: 17px;
-				font-weight: 400;
-				line-height: 1;
+			@media (width <= $lg) {
+				text-align: center;
 			}
 		}
 
 		.list {
 			display: flex;
 			flex-direction: column;
-			gap: 10px;
-			margin-bottom: 40px;
+			gap: 5px;
 
 			color: var(--gray);
-			font-size: 22px;
 
 			.item {
 				display: flex;
 				justify-content: space-between;
+				gap: 20px;
 			}
 
 			span {
 				color: var(--text);
+				text-align: right;
 			}
 		}
 
@@ -67,17 +72,30 @@
 			gap: 10px;
 
 			color: var(--gray);
-			font-size: 33px;
+			font-size: clamp(22px, 4vw, 34px);
+			line-height: 1.2;
 
 			p {
 				display: flex;
 				justify-content: space-between;
+				align-items: center;
+				gap: 20px;
 			}
 
 			span {
-				color: black;
-				font-size: 40px;
+				text-wrap: nowrap;
+
+				color: var(--text);
+
 				font-weight: 700;
+			}
+		}
+
+		.button {
+			align-self: flex-start;
+
+			@media (width <= $lg) {
+				align-self: stretch;
 			}
 		}
 	}

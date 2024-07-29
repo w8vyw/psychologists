@@ -1,4 +1,4 @@
-import { type PropsWithChildren, type ComponentProps } from 'react'
+import { type PropsWithChildren, type ComponentPropsWithoutRef } from 'react'
 
 import clsx from 'clsx'
 
@@ -8,7 +8,7 @@ export function Wrapper({
 	children,
 	className,
 	...props
-}: PropsWithChildren<ComponentProps<'div'>>) {
+}: PropsWithChildren<ComponentPropsWithoutRef<'div'>>) {
 	return (
 		<div
 			className={clsx(styles.wrapper, className)}

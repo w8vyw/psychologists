@@ -1,10 +1,10 @@
-import { type ComponentProps } from 'react'
+import { type ComponentPropsWithoutRef } from 'react'
 
 import clsx from 'clsx'
 
 import styles from './Overlay.module.scss'
 
-interface IOverlayProps extends ComponentProps<'div'> {
+interface IOverlayProps extends ComponentPropsWithoutRef<'div'> {
 	isActive?: boolean
 }
 

@@ -1,6 +1,6 @@
 import NextImage from 'next/image'
 
-import { type ComponentProps } from 'react'
+import { type ComponentPropsWithoutRef } from 'react'
 
 import clsx from 'clsx'
 
@@ -8,7 +8,9 @@ import styles from './ProductCard.module.scss'
 
 import { IImage } from '@/types'
 
-export interface IProductCardProps extends ComponentProps<'div'> {
+import { Button } from '@/ui/button/Button'
+
+export interface IProductCardProps extends ComponentPropsWithoutRef<'div'> {
 	product: {
 		image: IImage
 		name: string
@@ -41,12 +43,7 @@ export function ProductCard({ product, className, ...props }: IProductCardProps)
 				placeholder='blur'
 			/>
 			<div className={styles.content}>
-				<p className={styles.name}>
-					Условия группы <span>«{product.name}»</span>
-					<span className={clsx(styles.status, product.active ? styles.opened : styles.closed)}>
-						{product.active ? 'Идет набор' : 'Закрытая группа'}
-					</span>
-				</p>
+				<p className={styles.name}>«{product.name}»</p>
 				<ul className={styles.list}>
 					<li className={styles.item}>
 						Возраст участников группы
@@ -79,6 +76,7 @@ export function ProductCard({ product, className, ...props }: IProductCardProps)
 						1 очное занятие <span>{product.specs.price.offline} ₽</span>
 					</p>
 				</div>
+				<Button className={styles.button}>Записаться</Button>
 			</div>
 		</div>
 	)
