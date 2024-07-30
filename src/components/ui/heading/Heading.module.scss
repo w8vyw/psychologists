@@ -2,13 +2,13 @@
 	display: flex;
 	flex-direction: column;
 	gap: 6px;
-
 	margin-bottom: var(--m-b);
 
 	font-family: var(--secondary-font);
-
 	line-height: 1.2;
 	text-wrap: balance;
+	overflow-wrap: break-word;
+	hyphens: auto;
 
 	.title {
 		font-size: clamp(36px, 6vw, 50px);

@@ -23,18 +23,18 @@ import { MenuButton } from './menu-button/MenuButton'
 
 export function Navigation() {
 	const pathname = usePathname()
-	const isOtherPage = pathname !== '/'
+	// const isOtherPage = pathname !== '/'
 	const isMobile = useMediaQuery(`(width <= ${mobileBreakpoint})`)
 
 	const [isMenuActive, setIsMenuActive] = useState<boolean>(false)
 	const menuRef = useRef<HTMLUListElement>(null)
 	useClickOutside(menuRef, () => setIsMenuActive(false))
 
-	useEffect(() => {
-		isOtherPage
-			? document.body.classList.add('isOtherPage')
-			: document.body.classList.remove('isOtherPage')
-	}, [isOtherPage])
+	// useEffect(() => {
+	// 	isOtherPage
+	// 		? document.body.classList.add('isOtherPage')
+	// 		: document.body.classList.remove('isOtherPage')
+	// }, [isOtherPage])
 
 	useEffect(() => {
 		isMenuActive
@@ -44,7 +44,7 @@ export function Navigation() {
 
 	return (
 		<>
-			<nav className={clsx(styles.nav, isOtherPage && styles.isOtherPage)}>
+			<nav className={clsx(styles.nav /* , isOtherPage && styles.isOtherPage */)}>
 				<ul
 					className={clsx(styles.list, isMenuActive && styles.active)}
 					ref={menuRef}
@@ -55,7 +55,7 @@ export function Navigation() {
 							onClick={() => setIsMenuActive(false)}
 						>
 							<NextLink
-								className={clsx(styles.link, pathname === link.href && styles.active)}
+								className={clsx(styles.link /* pathname === link.href && styles.active */)}
 								href={link.href}
 							>
 								{link.label}

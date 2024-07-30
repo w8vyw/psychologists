@@ -10,6 +10,8 @@
 	color: #755400;
 	font-size: clamp(18px, 3vw, 22px);
 	line-height: 1.2;
+	text-align: center;
+	text-wrap: balance;
 
 	@media (width <=$lg) {
 		padding: 15px 30px;

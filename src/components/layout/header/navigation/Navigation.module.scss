@@ -22,7 +22,7 @@
 		align-items: center;
 		gap: 20px;
 
-		color: var(--black);
+		color: var(--text-color);
 
 		@media (width <= $lg) {
 			position: fixed;
@@ -47,7 +47,7 @@
 		}
 
 		.phone {
-			color: var(--black);
+			color: var(--text-color);
 		}
 	}
 
@@ -63,7 +63,7 @@
 
 		@media (hover: hover) and (pointer: fine) {
 			&:hover {
-				color: var(--black);
+				color: var(--text-color);
 
 				&::after {
 					transform-origin: left;
@@ -80,7 +80,7 @@
 
 		@media (hover: none) and (pointer: coarse) {
 			&:active {
-				color: var(--black);
+				color: var(--text-color);
 			}
 		}
 

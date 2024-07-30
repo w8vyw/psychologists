@@ -1,3 +1,5 @@
+import NextLink from 'next/link'
+
 import { type ComponentPropsWithoutRef, type ReactNode } from 'react'
 
 import clsx from 'clsx'
@@ -15,7 +17,7 @@ export enum EnumButtonTests {
 	Blue
 }
 
-interface IButtonProps extends ComponentPropsWithoutRef<'button'> {
+interface IButtonProps extends ComponentPropsWithoutRef<'a'> {
 	size?: EnumButtonSizes
 	test?: EnumButtonTests
 	children?: ReactNode
@@ -23,7 +25,7 @@ interface IButtonProps extends ComponentPropsWithoutRef<'button'> {
 
 export function Button({ size, test, children, className, ...props }: IButtonProps) {
 	return (
-		<button
+		<NextLink
 			className={clsx(
 				styles.button,
 				size === EnumButtonSizes.Medium && styles.medium,
@@ -31,9 +33,10 @@ export function Button({ size, test, children, className, ...props }: IButtonPro
 				test === EnumButtonTests.Blue && styles.blue,
 				className
 			)}
+			href='/'
 			{...props}
 		>
 			{children}
-		</button>
+		</NextLink>
 	)
 }

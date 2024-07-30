@@ -30,7 +30,8 @@ body {
 	display: flex;
 	flex-direction: column;
 
-	background: var(--background-color);
+	// background: var(--background-color);
+	background: var(--secondary-color);
 
 	color: var(--black);
 	font-size: clamp(18px, 3vw, 22px);

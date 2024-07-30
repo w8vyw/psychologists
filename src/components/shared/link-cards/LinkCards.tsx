@@ -17,7 +17,7 @@ export function LinkCards({ heading, cards, className, ...props }: ILinkCardsPro
 			className={clsx(styles.cards, className)}
 			{...props}
 		>
-			<h4 className={styles.heading}>{heading}</h4>
+			<h3 className={styles.heading}>{heading}</h3>
 			<ul className={styles.list}>
 				{cards.map(card => (
 					<li key={card.href}>
