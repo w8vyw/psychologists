@@ -1,14 +1,14 @@
-import { type ComponentPropsWithoutRef, type ReactNode } from 'react'
+import { type PropsWithChildren, type ComponentPropsWithoutRef } from 'react'
 
 import clsx from 'clsx'
 
 import styles from './Title.module.scss'
 
-interface ITitleProps extends ComponentPropsWithoutRef<'h3'> {
-	children?: ReactNode | undefined
-}
-
-export function Title({ children, className, ...props }: ITitleProps) {
+export function Title({
+	children,
+	className,
+	...props
+}: PropsWithChildren<ComponentPropsWithoutRef<'h3'>>) {
 	return (
 		<h3
 			className={clsx(styles.title, className)}

@@ -10,8 +10,8 @@ export function Logo({ className, ...props }: ComponentPropsWithoutRef<'a'>) {
 	return (
 		<Link
 			className={clsx(styles.logo, className)}
-			href='/'
 			title='Логотип ir-ox-help.ru'
+			href='/'
 			{...props}
 		>
 			<svg className={styles.icon}>

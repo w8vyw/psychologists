@@ -39,8 +39,8 @@ export function List({
 				<ul>
 					{items.column1.map(item => (
 						<li
-							key={item}
 							className={styles.item}
+							key={item}
 						>
 							{item}
 						</li>
@@ -50,8 +50,8 @@ export function List({
 					<ul>
 						{items.column2.map(item => (
 							<li
-								key={item}
 								className={styles.item}
+								key={item}
 							>
 								{item}
 							</li>

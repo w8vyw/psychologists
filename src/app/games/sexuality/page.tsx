@@ -4,9 +4,7 @@ import { type IImage } from '@/types'
 
 import { Button } from '@/ui/button/Button'
 import { Heading } from '@/ui/heading/Heading'
-import { Section } from '@/ui/section/Section'
 import { Text } from '@/ui/text/Text'
-import { Title } from '@/ui/title/Title'
 
 import { List } from '@/shared/list/List'
 

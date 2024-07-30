@@ -4,7 +4,6 @@ import { type IImage } from '@/types'
 
 import { Heading } from '@/ui/heading/Heading'
 import { Message } from '@/ui/message/Message'
-import { Section } from '@/ui/section/Section'
 import { Text } from '@/ui/text/Text'
 import { Title } from '@/ui/title/Title'
 

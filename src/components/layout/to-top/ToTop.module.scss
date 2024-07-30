@@ -6,18 +6,22 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 45px;
-	height: 45px;
+	width: 44px;
+	height: 44px;
 	border-radius: 50%;
 	opacity: 0;
 	visibility: hidden;
-	box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
+	box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
 
 	background: white;
 
 	transition: 300ms ease-out;
 
 	scale: 0.7;
+
+	svg {
+		margin-bottom: 2px;
+	}
 
 	&.active {
 		opacity: 1;

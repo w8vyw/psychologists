@@ -3,10 +3,10 @@
 
 :root {
 	// Colors
-	--primary: #cb19a4;
-	--secondary: #f7dff2;
-	--background: white;
-	--text: #222;
+	--primary-color: #cb19a4;
+	--secondary-color: #f7dff2;
+	--background-color: white;
+	--black: #222;
 	--gray: #adadad;
 	--green: #4fbe3c;
 
@@ -19,21 +19,20 @@
 	--z-i-min: 1;
 
 	// margins
-	--margin-b: clamp(40px, 7vw, 80px);
+	--m-b: clamp(40px, 7vw, 80px);
 
 	.isOtherPage {
-		--background: var(--secondary);
+		--background-color: var(--secondary-color);
 	}
 }
 
 body {
 	display: flex;
 	flex-direction: column;
-	padding-bottom: 160px;
 
-	background: var(--background);
+	background: var(--background-color);
 
-	color: var(--text);
+	color: var(--black);
 	font-size: clamp(18px, 3vw, 22px);
 
 	// overflow-wrap: break-word;
@@ -55,11 +54,11 @@ main {
 ::-webkit-scrollbar-thumb {
 	border-radius: 10px;
 
-	background: var(--primary);
+	background: var(--primary-color);
 }
 
 ::selection {
-	background: var(--primary);
+	background: var(--primary-color);
 
 	color: white;
 }

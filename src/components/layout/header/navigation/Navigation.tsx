@@ -10,14 +10,15 @@ import clsx from 'clsx'
 
 import styles from './Navigation.module.scss'
 
-import { Overlay } from '@/components/ui/overlay/Overlay'
+import links from './links.data'
 
 import { useClickOutside } from '@/hooks/useClickOutside'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 
+import { Overlay } from '@/components/ui/overlay/Overlay'
+
 import { mobileBreakpoint } from '../Header'
 import { TelegramLink } from '../top-line/telegram-link/TelegramLink'
-import links from './links.data'
 import { MenuButton } from './menu-button/MenuButton'
 
 export function Navigation() {

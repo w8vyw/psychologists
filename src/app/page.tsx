@@ -1,7 +1,10 @@
 import { Button, EnumButtonSizes, EnumButtonTests } from '@/ui/button/Button'
 import { Wrapper } from '@/ui/wrapper/Wrapper'
 
+// import { useCounterStore } from '@/providers/counter-store-provider'
+
 export default function Home() {
+	// const { count, incrementCount, decrementCount } = useCounterStore(state => state)
 	return (
 		<Wrapper style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10 }}>
 			Главная
@@ -21,6 +24,23 @@ export default function Home() {
 			>
 				Записаться
 			</Button>
+			{/* <div>
+				<hr />
+				Count: {count}
+				<button
+					type='button'
+					onClick={() => incrementCount()}
+				>
+					Increment Count
+				</button>
+				<button
+					type='button'
+					onClick={() => decrementCount()}
+				>
+					Decrement Count
+				</button>
+				<hr />
+			</div> */}
 		</Wrapper>
 	)
 }

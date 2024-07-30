@@ -140,12 +140,13 @@ export default {
 						'text-indent',
 						'text-overflow',
 						'text-shadow',
+						'text-wrap',
 						'letter-spacing',
 						'word-spacing',
 						'white-space',
-						'word-break',
-						'word-wrap',
 						'overflow-wrap',
+						'word-wrap',
+						'word-break',
 						'hyphens'
 					],
 					emptyLineBefore: 'always'

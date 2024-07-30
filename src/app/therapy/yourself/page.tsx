@@ -4,9 +4,7 @@ import { type IImage } from '@/types'
 
 import { Heading } from '@/ui/heading/Heading'
 import { Message } from '@/ui/message/Message'
-import { Section } from '@/ui/section/Section'
 import { Text } from '@/ui/text/Text'
-import { Title } from '@/ui/title/Title'
 
 import { EnumListStyle, List } from '@/shared/list/List'
 import { PreviewImages } from '@/shared/preview-images/PreviewImages'

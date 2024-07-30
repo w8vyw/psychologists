@@ -4,13 +4,11 @@ import clsx from 'clsx'
 
 import styles from './Heading.module.scss'
 
-export interface IData {
-	title: string
-	subtitle?: string
-}
-
 interface IHeadingProps extends ComponentPropsWithoutRef<'div'> {
-	data: IData
+	data: {
+		title: string
+		subtitle?: string
+	}
 }
 
 export function Heading({ data, className, ...props }: IHeadingProps) {

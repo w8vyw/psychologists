@@ -28,12 +28,22 @@ export function ToTop() {
 	return (
 		<button
 			className={clsx(styles.toTop, active && styles.active)}
-			onClick={() => {
+			onClick={e => {
+				e.preventDefault()
 				document.body.scrollTop = 0
 				document.documentElement.scrollTop = 0
 			}}
+			type='button'
 		>
-			Up
+			<svg
+				xmlns='http://www.w3.org/2000/svg'
+				viewBox='0 0 24 15'
+				width='24'
+				height='15'
+				fill='#cb19a4'
+			>
+				<path d='M11.8921 0.878906L23.5594 12.5462L21.438 14.6675L11.8921 5.12155L2.34615 14.6675L0.224828 12.5462L11.8921 0.878906Z' />
+			</svg>
 		</button>
 	)
 }

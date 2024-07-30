@@ -1,10 +1,10 @@
 .slogan {
-	font-family: var(--tenor-sans);
+	font-family: var(--secondary-font);
 	font-size: clamp(24px, 4.5vw, 36px);
 	line-height: 1.2;
 	text-align: center;
 
 	span {
-		color: var(--primary);
+		color: var(--primary-color);
 	}
 }
