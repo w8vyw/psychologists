@@ -4,10 +4,10 @@
 	.heading {
 		max-width: 950px;
 		margin: 0 auto;
-		margin-bottom: clamp(20px, 3.75vw, 40px);
+		margin-bottom: var(--m-b-heading);
 
 		font-family: var(--secondary-font);
-		font-size: clamp(30px, 5vw, 50px);
+		font-size: var(--f-z-h1);
 		line-height: 1.2;
 		text-align: center;
 		overflow-wrap: break-word;
@@ -18,7 +18,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		gap: clamp(15px, 2.75vw, 30px);
+		gap: var(--gap);
 
 		@media (width <=$lg) {
 			max-width: 700px;

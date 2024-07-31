@@ -4,26 +4,31 @@
 	margin-bottom: var(--m-b);
 
 	.heading {
-		margin-bottom: clamp(20px, 3.5vw, 40px);
+		margin-bottom: var(--m-b-heading);
+
+		line-height: 1.2;
 	}
 
 	.lists {
 		display: flex;
 		flex-wrap: wrap;
-		gap: clamp(20px, 5vw, 60px);
+		gap: var(--gap);
 
 		@media (width <= $md) {
 			flex-direction: column;
-			gap: 20px;
 		}
 
 		ul {
 			display: flex;
 			flex-direction: column;
-			gap: clamp(20px, 3.5vw, 40px);
+			gap: var(--gap);
 
 			flex-grow: 1;
 			flex-basis: calc(50% - 30px);
+
+			@media (width <= $md) {
+				flex-basis: 100%;
+			}
 
 			.item {
 				position: relative;

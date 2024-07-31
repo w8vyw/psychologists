@@ -1,13 +1,11 @@
 @import '@/styles/variables';
 
 .header {
-	margin-bottom: 50px;
+	margin-bottom: clamp(30px, 5vw, 50px);
 
 	background: white;
 
 	@media (width <= $lg) {
-		margin-bottom: 25px;
-
 		.wrapper {
 			display: flex;
 			justify-content: space-between;

@@ -33,7 +33,7 @@ export function Button({ size, test, children, className, ...props }: IButtonPro
 				test === EnumButtonTests.Blue && styles.blue,
 				className
 			)}
-			href='/'
+			href='/#feedback'
 			{...props}
 		>
 			{children}

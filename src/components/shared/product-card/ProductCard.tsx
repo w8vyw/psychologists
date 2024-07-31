@@ -39,11 +39,12 @@ export function ProductCard({ product, className, ...props }: IProductCardProps)
 				className={styles.image}
 				src={product.image.imageData}
 				alt={product.image.alt}
-				quality={100}
 				placeholder='blur'
 			/>
 			<div className={styles.content}>
-				<p className={styles.name}>«{product.name}»</p>
+				<h4 className={styles.heading}>
+					<span>Условия группы</span> {product.name}
+				</h4>
 				<ul className={styles.list}>
 					<li className={styles.item}>
 						Возраст участников группы
@@ -67,15 +68,13 @@ export function ProductCard({ product, className, ...props }: IProductCardProps)
 						Продолжительность работы группы
 						<span>{product.specs.groupDuration}</span>
 					</li>
-				</ul>
-				<div className={styles.price}>
-					<p>
+					<li className={clsx(styles.item, styles.price)}>
 						1 онлайн занятие <span>{product.specs.price.online} ₽</span>
-					</p>
-					<p>
+					</li>
+					<li className={clsx(styles.item, styles.price)}>
 						1 очное занятие <span>{product.specs.price.offline} ₽</span>
-					</p>
-				</div>
+					</li>
+				</ul>
 				<Button
 					className={styles.button}
 					size={EnumButtonSizes.Medium}

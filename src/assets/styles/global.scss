@@ -20,6 +20,20 @@
 
 	// margins
 	--m-b: clamp(40px, 7vw, 80px);
+	--m-b-heading: clamp(25px, 5vw, 50px);
+
+	// gaps
+	--gap: clamp(10px, 2.5vw, 30px);
+
+	// font-sizes
+	--f-z-h1: clamp(36px, 6vw, 50px);
+	--f-z-h2: clamp(28px, 4.75vw, 40px);
+	--f-z-h3: clamp(24px, 4vw, 36px);
+	--f-z-h4: clamp(22px, 3.75vw, 30px);
+	--f-z-h5: clamp(18px, 3.75vw, 24px);
+	--f-z-p: clamp(18px, 3vw, 22px);
+	--f-z-p-md: clamp(17px, 2.8vw, 20px);
+	--f-z-p-sm: clamp(16px, 2.8vw, 18px);
 
 	.isOtherPage {
 		--background-color: var(--secondary-color);
@@ -34,10 +48,7 @@ body {
 	background: var(--secondary-color);
 
 	color: var(--black);
-	font-size: clamp(18px, 3vw, 22px);
-
-	// overflow-wrap: break-word;
-	// hyphens: auto;
+	font-size: var(--f-z-p);
 }
 
 main {

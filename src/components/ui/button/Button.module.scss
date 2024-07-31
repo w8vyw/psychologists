@@ -8,7 +8,6 @@
 	background: linear-gradient(360deg, #ffe296 0%, #ffcb46 23.44%, #fff2c6 100%);
 
 	color: #755400;
-	font-size: clamp(18px, 3vw, 22px);
 	line-height: 1.2;
 	text-align: center;
 	text-wrap: balance;
@@ -22,11 +21,18 @@
 	}
 
 	&.medium {
-		padding: 27px 57px;
+		padding: 25px 50px;
+
+		@media (width <=$lg) {
+			padding: 20px 40px;
+		}
+
+		@media (width <=$md) {
+			padding: 15px 30px;
+		}
 	}
 
 	&.large {
-		padding: 27px 88px;
 	}
 
 	&.blue {

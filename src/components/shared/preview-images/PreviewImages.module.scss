@@ -3,18 +3,14 @@
 .images {
 	display: flex;
 	justify-content: center;
-	gap: clamp(15px, 8vw, 100px);
+	gap: 100px;
 	margin-bottom: clamp(10px, 2.5vw, 20px);
 
-	@media (width <= $md) {
+	@media (width <= $lg) {
 		gap: 15px;
 	}
 
 	.image {
-		min-width: 0;
-		height: auto;
 		min-height: 200px;
-		object-fit: cover;
-		object-position: center;
 	}
 }

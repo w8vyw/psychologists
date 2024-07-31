@@ -10,10 +10,9 @@
 
 	background: white;
 
-	font-size: clamp(14px, 3vw, 22px);
+	font-size: clamp(15px, 2.5vw, 22px);
 
 	@media (width <= $lg) {
-		flex-direction: column;
 		border-radius: 10px;
 	}
 
@@ -26,62 +25,79 @@
 	.content {
 		display: flex;
 		flex-direction: column;
-		gap: 30px;
 		flex-grow: 1;
 		padding: 60px 80px;
 
 		@media (width <= $lg) {
-			gap: 20px;
+			padding: 30px;
+		}
+
+		@media (width <= $sm) {
 			padding: 15px;
 		}
 
-		.name {
-			font-size: clamp(28px, 6vw, 36px);
+		.heading {
+			margin-bottom: var(--m-b-heading);
+
+			font-size: var(--f-z-h3);
 			font-weight: 500;
 			line-height: 1.2;
 			text-wrap: balance;
+
+			span {
+				display: block;
+
+				color: var(--gray);
+				font-size: var(--f-z-h5);
+				line-height: 1.6;
+			}
 		}
 
 		.list {
 			display: flex;
 			flex-direction: column;
-			gap: 5px;
+			gap: clamp(6px, 1.5vw, 10px);
+			margin-bottom: var(--m-b-heading);
 
 			color: var(--gray);
 
 			.item {
 				display: flex;
+				flex-wrap: wrap;
 				justify-content: space-between;
-				gap: 15px;
+				gap: 0 10px;
+
+				@media (width <= $sm) {
+					justify-content: flex-start;
+				}
+
+				span {
+					color: var(--black);
+					text-align: right;
+				}
 			}
 
-			span {
-				color: var(--black);
-				text-align: right;
-			}
-		}
-
-		.price {
-			display: flex;
-			flex-direction: column;
-			gap: 10px;
-
-			color: var(--gray);
-			font-size: clamp(22px, 4vw, 34px);
-			line-height: 1.2;
-
-			p {
+			.price {
 				display: flex;
+				flex-wrap: nowrap;
 				justify-content: space-between;
 				align-items: center;
-				gap: 20px;
-			}
 
-			span {
-				color: var(--black);
+				color: var(--gray);
+				font-size: var(--f-z-h4);
+				line-height: 1.2;
 
-				font-weight: 700;
-				text-wrap: nowrap;
+				@media (width <= $sm) {
+					justify-content: space-between;
+				}
+
+				span {
+					color: var(--black);
+					font-size: var(--f-z-h3);
+
+					font-weight: 700;
+					text-wrap: nowrap;
+				}
 			}
 		}
 
