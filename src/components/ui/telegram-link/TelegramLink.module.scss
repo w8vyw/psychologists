@@ -1,0 +1,17 @@
+@import '@/styles/variables';
+
+.link {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	color: var(--primary-color);
+	font-size: var(--f-z-p-sm);
+
+	.icon {
+		width: 25px;
+		height: 25px;
+
+		fill: currentcolor;
+	}
+}

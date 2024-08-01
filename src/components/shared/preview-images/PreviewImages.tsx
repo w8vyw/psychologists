@@ -6,7 +6,7 @@ import clsx from 'clsx'
 
 import styles from './PreviewImages.module.scss'
 
-import { type IImage } from '@/types'
+import { type IImage } from '@/types/types'
 
 interface IPreviewImagesProps extends ComponentPropsWithoutRef<'div'> {
 	images: [IImage] | [IImage, IImage]

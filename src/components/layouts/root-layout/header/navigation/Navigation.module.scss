@@ -1,0 +1,123 @@
+@import '@/styles/variables';
+
+.nav {
+	--border: 1px solid #e2e5ec;
+	padding: 20px 35px;
+	border-top: var(--border);
+	border-bottom: var(--border);
+
+	@media (width <= $lg) {
+		--border: none;
+
+		padding: 0;
+
+		font-size: 16px;
+		text-align: center;
+	}
+
+	.list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		gap: 20px;
+
+		color: var(--black);
+
+		@media (width <= $lg) {
+			position: fixed;
+			top: 0;
+			right: 0;
+			z-index: var(--z-i-high);
+
+			flex-flow: column nowrap;
+
+			justify-content: flex-start;
+			width: 65%;
+			height: 100dvh;
+			padding: 20px 10px;
+
+			background: white;
+
+			transition: 200ms ease-out;
+		}
+
+		.phone {
+			color: var(--black);
+		}
+	}
+
+	.link {
+		position: relative;
+
+		display: block;
+		padding: 5px;
+
+		font-size: 18px;
+
+		transition: color 200ms ease-in-out;
+
+		@media (hover: hover) and (pointer: fine) {
+			&:hover {
+				color: var(--black);
+
+				&::after {
+					transform-origin: left;
+					scale: 1;
+				}
+			}
+
+			&.active {
+				&:hover {
+					color: var(--primary-color);
+				}
+			}
+		}
+
+		@media (hover: none) and (pointer: coarse) {
+			&:active {
+				color: var(--black);
+			}
+		}
+
+		@media (width <= $lg) {
+			font-size: 16px;
+		}
+
+		&::after {
+			content: '';
+
+			position: absolute;
+			top: 100%;
+			left: 0;
+
+			display: block;
+			width: 100%;
+			height: 2px;
+
+			background: var(--primary-color);
+
+			transition: scale 300ms ease;
+
+			transform-origin: right;
+			scale: 0 1;
+		}
+
+		&.active {
+			color: var(--primary-color);
+		}
+	}
+
+	&.isOtherPage {
+		--border: none;
+		padding: 21px 35px;
+
+		@media (width <= $lg) {
+			padding: 0;
+		}
+
+		.list {
+			color: #9c9c9c;
+		}
+	}
+}

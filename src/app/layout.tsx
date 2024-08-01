@@ -1,50 +1,45 @@
 import { Metadata } from 'next'
 
-import Layout from '@/components/layout/Layout'
+import '@/styles/global.scss'
+
+import { RootLayout } from '@/components/layouts/root-layout/Layout'
 
 export const metadata: Metadata = {
-	applicationName: '',
-
 	metadataBase: new URL('https://ir-ox-help.ru'),
-
-	formatDetection: { telephone: false },
-
-	alternates: {
-		canonical: ''
-	},
-
-	verification: {
-		yandex: '',
-		google: ''
-	},
-
 	title: 'Психологические услуги',
-
 	description:
 		'Мы - психологи/психотерапевты приглашаем вас на: консультации, психотерапию, коучинг, тренинги, трансформационные игры. Мы поможем вам преодолеть любые жизненные трудности: разобраться в отношениях, укрепить личные границы, повысить самооценку, справиться со страхами, фобиями, стрессами, расстройствами пищевого поведения, алкогольной и другими видами зависимостей, депрессией, паническими атаками. Свяжитесь с нами, чтобы начать свой путь к эмоциональному здоровью и психологическому благополучию!',
-
-	openGraph: {
-		title: 'Психологические услуги',
-		description:
-			'Мы - психологи/психотерапевты приглашаем вас на: консультации, психотерапию, коучинг, тренинги, трансформационные игры. Мы поможем вам преодолеть любые жизненные трудности: разобраться в отношениях, укрепить личные границы, повысить самооценку, справиться со страхами, фобиями, стрессами, расстройствами пищевого поведения, алкогольной и другими видами зависимостей, депрессией, паническими атаками. Свяжитесь с нами, чтобы начать свой путь к эмоциональному здоровью и психологическому благополучию!',
-		url: '',
-		type: 'website',
-		siteName: 'Психологические услуги',
-		locale: 'ru_RU'
-	},
-
+	applicationName: '',
+	authors: { name: 'w8vy', url: 'https://w8vy.dev' },
+	generator: 'Next.js 14',
+	referrer: 'origin',
+	creator: 'w8vy',
 	robots: {
 		index: false,
 		follow: false
 	},
-
-	referrer: 'no-referrer-when-downgrade'
+	alternates: {
+		canonical: ''
+	},
+	openGraph: {
+		type: 'website',
+		url: '',
+		siteName: 'Психологические услуги',
+		title: 'Психологические услуги',
+		description:
+			'Мы - психологи/психотерапевты приглашаем вас на: консультации, психотерапию, коучинг, тренинги, трансформационные игры. Мы поможем вам преодолеть любые жизненные трудности: разобраться в отношениях, укрепить личные границы, повысить самооценку, справиться со страхами, фобиями, стрессами, расстройствами пищевого поведения, алкогольной и другими видами зависимостей, депрессией, паническими атаками. Свяжитесь с нами, чтобы начать свой путь к эмоциональному здоровью и психологическому благополучию!'
+	},
+	verification: {
+		yandex: '',
+		google: ''
+	},
+	formatDetection: { telephone: false }
 }
 
-export default function RootLayout({
+export default function Layout({
 	children
 }: Readonly<{
 	children: React.ReactNode
 }>) {
-	return <Layout>{children}</Layout>
+	return <RootLayout>{children}</RootLayout>
 }

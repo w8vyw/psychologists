@@ -6,7 +6,7 @@ import clsx from 'clsx'
 
 import styles from './ProductCard.module.scss'
 
-import { IImage } from '@/types'
+import { IImage } from '@/types/types'
 
 import { EnrollButton, EnumEnrollButtonSizes } from '@/shared/enroll-button/EnrollButton'
 
