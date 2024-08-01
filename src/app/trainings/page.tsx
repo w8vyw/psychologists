@@ -4,11 +4,11 @@ import styles from './page.module.scss'
 
 import { type IImage } from '@/types'
 
-import { Button } from '@/ui/button/Button'
 import { Heading } from '@/ui/heading/Heading'
 import { Text } from '@/ui/text/Text'
 import { Title } from '@/ui/title/Title'
 
+import { EnrollButton } from '@/shared/enroll-button/EnrollButton'
 import { EnumListStyle, List } from '@/shared/list/List'
 import { PreviewImages } from '@/shared/preview-images/PreviewImages'
 
@@ -22,11 +22,11 @@ const title = 'Тренинг - Город желаний'
 const previewImages: [IImage, IImage] = [
 	{
 		imageData: PreviewImage1,
-		alt: ''
+		alt: 'Ирина'
 	},
 	{
 		imageData: PreviewImage2,
-		alt: ''
+		alt: 'Оксана'
 	}
 ]
 
@@ -143,7 +143,7 @@ export default function Trainings() {
 					<p>И их исполнение не заставит себя долго ждать!</p>
 				</div>
 			</Text>
-			<Button>Записаться</Button>
+			<EnrollButton>Записаться</EnrollButton>
 		</>
 	)
 }

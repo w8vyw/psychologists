@@ -2,11 +2,11 @@ import styles from './page.module.scss'
 
 import { type IImage } from '@/types'
 
-import { Button } from '@/ui/button/Button'
 import { Heading } from '@/ui/heading/Heading'
 import { Text } from '@/ui/text/Text'
 import { Title } from '@/ui/title/Title'
 
+import { EnrollButton } from '@/shared/enroll-button/EnrollButton'
 import { List } from '@/shared/list/List'
 import { PreviewImages } from '@/shared/preview-images/PreviewImages'
 
@@ -76,7 +76,7 @@ export default function Arrangements() {
 					</p>
 				</div>
 			</Text>
-			<Button>Записаться</Button>
+			<EnrollButton>Записаться</EnrollButton>
 		</>
 	)
 }

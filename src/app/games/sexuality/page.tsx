@@ -2,10 +2,10 @@ import styles from './page.module.scss'
 
 import { type IImage } from '@/types'
 
-import { Button } from '@/ui/button/Button'
 import { Heading } from '@/ui/heading/Heading'
 import { Text } from '@/ui/text/Text'
 
+import { EnrollButton } from '@/shared/enroll-button/EnrollButton'
 import { List } from '@/shared/list/List'
 
 import { PreviewImages } from '@/components/shared/preview-images/PreviewImages'
@@ -44,7 +44,6 @@ export default function Sexuality() {
 						'Что поможет мне возобновить огонь сексуальности в отношениях с мужчиной?',
 						'Как мне гармонизировать тело и ум в теме моей сексуальности?',
 						'Что блокирует мою сексуальность?',
-						'Что блокирует мою сексуальность?',
 						'Как раскрытие сексуальности поможет увеличить доход?',
 						'Что раскроет мою женственность и привлечет в жизнь будущего мужа?'
 					]
@@ -62,7 +61,7 @@ export default function Sexuality() {
 					]
 				}}
 			/>
-			<Button>Записаться</Button>
+			<EnrollButton>Записаться</EnrollButton>
 		</>
 	)
 }

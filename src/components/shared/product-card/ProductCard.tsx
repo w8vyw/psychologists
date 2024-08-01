@@ -8,7 +8,7 @@ import styles from './ProductCard.module.scss'
 
 import { IImage } from '@/types'
 
-import { Button, EnumButtonSizes } from '@/ui/button/Button'
+import { EnrollButton, EnumEnrollButtonSizes } from '@/shared/enroll-button/EnrollButton'
 
 export interface IProductCardProps extends ComponentPropsWithoutRef<'div'> {
 	product: {
@@ -75,12 +75,12 @@ export function ProductCard({ product, className, ...props }: IProductCardProps)
 						1 очное занятие <span>{product.specs.price.offline} ₽</span>
 					</li>
 				</ul>
-				<Button
+				<EnrollButton
 					className={styles.button}
-					size={EnumButtonSizes.Medium}
+					size={EnumEnrollButtonSizes.Medium}
 				>
 					Записаться
-				</Button>
+				</EnrollButton>
 			</div>
 		</div>
 	)

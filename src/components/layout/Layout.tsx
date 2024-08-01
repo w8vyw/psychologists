@@ -4,7 +4,8 @@ import clsx from 'clsx'
 
 import '@/styles/global.scss'
 
-// import { CounterStoreProvider } from '@/providers/counter-store-provider'
+import { Providers } from '@/providers/providers'
+
 import { Wrapper } from '../ui/wrapper/Wrapper'
 import { Footer } from './footer/Footer'
 import { Header } from './header/Header'
@@ -36,14 +37,16 @@ export default function Layout({
 			lang='ru'
 			className='poweredBy__@w8vyw__Next.js__'
 		>
-			<body className={clsx(inter.className, tenorSans.variable)}>
-				<Header />
-				<main>
-					<Wrapper>{children}</Wrapper>
-				</main>
-				<Footer />
-				<ToTop />
-			</body>
+			<Providers>
+				<body className={clsx(inter.className, tenorSans.variable)}>
+					<Header />
+					<main>
+						<Wrapper>{children}</Wrapper>
+					</main>
+					<Footer />
+					<ToTop />
+				</body>
+			</Providers>
 		</html>
 	)
 }

@@ -20,6 +20,8 @@ import SlimnessCardImage from '@/images/therapy/link-cards/slimness.webp'
 import YourselfCardImage from '@/images/therapy/link-cards/yourself.webp'
 import PreviewImage from '@/images/therapy/preview.webp'
 
+import { EnrollButton } from '../../components/shared/enroll-button/EnrollButton'
+
 const title = 'Групповая психотерапия'
 
 const previewImages: [IImage] = [

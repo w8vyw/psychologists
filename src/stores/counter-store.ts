@@ -1,24 +1,22 @@
 import { createStore } from 'zustand/vanilla'
 
 export interface CounterState {
-	count: number
+	psychologist: string
 }
 
 export interface CounterActions {
-	decrementCount: () => void
-	incrementCount: () => void
+	setPsychologist: (who: string) => void
 }
 
 export type CounterStore = CounterState & CounterActions
 
 export const defaultInitState: CounterState = {
-	count: 0
+	psychologist: 'both'
 }
 
 export const createCounterStore = (initState: CounterState = defaultInitState) => {
 	return createStore<CounterStore>()(set => ({
 		...initState,
-		decrementCount: () => set(state => ({ count: state.count - 1 })),
-		incrementCount: () => set(state => ({ count: state.count + 1 }))
+		setPsychologist: who => set(state => ({ psychologist: (state.psychologist = who) }))
 	}))
 }

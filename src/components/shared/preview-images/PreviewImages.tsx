@@ -20,8 +20,8 @@ export function PreviewImages({ images, className, ...props }: IPreviewImagesPro
 		>
 			{images.map(img => (
 				<NextImage
-					className={styles.image}
 					key={img.alt}
+					className={styles.image}
 					src={img.imageData}
 					alt={img.alt}
 					quality={100}

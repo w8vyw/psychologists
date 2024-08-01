@@ -4,7 +4,7 @@
 	div {
 		display: flex;
 		align-items: flex-start;
-		gap: clamp(10px, 2.5vw, 30px);
+		gap: var(--gap);
 
 		@media (width <=$md) {
 			flex-direction: column;

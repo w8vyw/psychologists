@@ -2,10 +2,10 @@ import styles from './page.module.scss'
 
 import { type IImage } from '@/types'
 
-import { Button } from '@/ui/button/Button'
 import { Heading } from '@/ui/heading/Heading'
 import { Text } from '@/ui/text/Text'
 
+import { EnrollButton } from '@/shared/enroll-button/EnrollButton'
 import { List } from '@/shared/list/List'
 
 import { PreviewImages } from '@/components/shared/preview-images/PreviewImages'
@@ -19,11 +19,11 @@ const title = 'Коучинг'
 const previewImages: [IImage, IImage] = [
 	{
 		imageData: PreviewImage1,
-		alt: ''
+		alt: 'Ирина'
 	},
 	{
 		imageData: PreviewImage2,
-		alt: ''
+		alt: 'Оксана'
 	}
 ]
 
@@ -90,7 +90,7 @@ export default function Coaching() {
 					</p>
 				</div>
 			</Text>
-			<Button>Записаться</Button>
+			<EnrollButton>Записаться</EnrollButton>
 		</>
 	)
 }

@@ -6,6 +6,7 @@ import { Button } from '@/ui/button/Button'
 import { Heading } from '@/ui/heading/Heading'
 import { Text } from '@/ui/text/Text'
 
+import { EnrollButton } from '@/shared/enroll-button/EnrollButton'
 import { List } from '@/shared/list/List'
 import { PreviewImages } from '@/shared/preview-images/PreviewImages'
 
@@ -55,7 +56,7 @@ export default function Money() {
 					]
 				}}
 			/>
-			<Button>Записаться</Button>
+			<EnrollButton>Записаться</EnrollButton>
 		</>
 	)
 }

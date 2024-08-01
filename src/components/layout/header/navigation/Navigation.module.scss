@@ -63,7 +63,7 @@
 
 		@media (hover: hover) and (pointer: fine) {
 			&:hover {
-				color: var(--text-color);
+				color: var(--black);
 
 				&::after {
 					transform-origin: left;
