@@ -1,3 +1,4 @@
+// 'use client'
 import NextImage from 'next/image'
 
 import { type ComponentPropsWithoutRef } from 'react'
@@ -6,7 +7,7 @@ import clsx from 'clsx'
 
 import styles from './ProductCard.module.scss'
 
-import { IImage } from '@/types/types'
+import { IImage } from '@/types/global'
 
 import { EnrollButton, EnumEnrollButtonSizes } from '@/shared/enroll-button/EnrollButton'
 
@@ -77,7 +78,7 @@ export function ProductCard({ product, className, ...props }: IProductCardProps)
 				</ul>
 				<EnrollButton
 					className={styles.button}
-					size={EnumEnrollButtonSizes.Medium}
+					// size={EnumEnrollButtonSizes.Medium}
 				>
 					Записаться
 				</EnrollButton>

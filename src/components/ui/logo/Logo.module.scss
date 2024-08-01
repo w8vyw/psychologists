@@ -4,6 +4,8 @@
 	display: flex;
 	gap: 8px;
 
+	color: var(--primary-color);
+
 	@media (width <= $sm) {
 		gap: 6px;
 	}

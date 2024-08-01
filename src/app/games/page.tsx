@@ -2,7 +2,7 @@ import NextImage from 'next/image'
 
 import styles from './page.module.scss'
 
-import { type IImage } from '@/types/types'
+import { type IImage } from '@/types/global'
 
 import { Heading } from '@/ui/heading/Heading'
 import { Text } from '@/ui/text/Text'

@@ -1,6 +1,6 @@
 import styles from './page.module.scss'
 
-import { type IImage } from '@/types/types'
+import { type IImage } from '@/types/global'
 
 import { Heading } from '@/ui/heading/Heading'
 import { Message } from '@/ui/message/Message'
@@ -19,8 +19,6 @@ import KidCardImage from '@/images/therapy/link-cards/kid.webp'
 import SlimnessCardImage from '@/images/therapy/link-cards/slimness.webp'
 import YourselfCardImage from '@/images/therapy/link-cards/yourself.webp'
 import PreviewImage from '@/images/therapy/preview.webp'
-
-import { EnrollButton } from '../../components/shared/enroll-button/EnrollButton'
 
 const title = 'Групповая психотерапия'
 

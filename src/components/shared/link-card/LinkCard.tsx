@@ -7,7 +7,7 @@ import clsx from 'clsx'
 
 import styles from './LinkCard.module.scss'
 
-import { type IImage, type ILink } from '@/types/types'
+import { type IImage, type ILink } from '@/types/global'
 
 export interface ILinkCardProps extends ILink, Omit<ComponentPropsWithoutRef<'a'>, 'href'> {
 	image: IImage
