@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState, type ElementRef } from 'react'
 
 import clsx from 'clsx'
-import { motion, type Variants } from 'framer-motion'
+import { m, type Variants } from 'framer-motion'
 
 import styles from './Navigation.module.scss'
 
@@ -52,10 +52,10 @@ export function Navigation() {
 		opened: {
 			x: '0%',
 			transition: {
-				duration: 0.2,
+				duration: 0.1,
 				when: 'beforeChildren',
-				staggerChildren: 0.075,
-				delayChildren: 0.1
+				staggerChildren: 0.05,
+				delayChildren: 0.075
 			}
 		}
 	}
@@ -68,7 +68,7 @@ export function Navigation() {
 	return (
 		<>
 			<nav className={clsx(styles.nav, isOtherPage && styles.isOtherPage)}>
-				<motion.ul
+				<m.ul
 					className={clsx(styles.list)}
 					ref={menuRef}
 					variants={menuVariants}
@@ -76,7 +76,7 @@ export function Navigation() {
 					initial={'closed'}
 				>
 					{links.map((link, index) => (
-						<motion.li
+						<m.li
 							key={index}
 							onClick={() => toggleMenu(!isMenuOpened)}
 							variants={menuItemVariants}
@@ -87,31 +87,31 @@ export function Navigation() {
 							>
 								{link.label}
 							</NextLink>
-						</motion.li>
+						</m.li>
 					))}
 					{isMobile && (
 						<>
-							<motion.li
+							<m.li
 								className={styles.phone}
 								variants={menuItemVariants}
 							>
 								<NextLink href='tel:+79852428318'>+7 985 242 83 18</NextLink>
-							</motion.li>
-							<motion.li
+							</m.li>
+							<m.li
 								className={styles.phone}
 								variants={menuItemVariants}
 							>
 								<NextLink href='tel:+79254507146'>+7 925 450 71 46</NextLink>
-							</motion.li>
-							<motion.li
+							</m.li>
+							<m.li
 								className={styles.tg}
 								variants={menuItemVariants}
 							>
 								<TelegramLink />
-							</motion.li>
+							</m.li>
 						</>
 					)}
-				</motion.ul>
+				</m.ul>
 				{isMobile && (
 					<>
 						<MenuButton onClick={() => toggleMenu(!isMenuOpened)} />

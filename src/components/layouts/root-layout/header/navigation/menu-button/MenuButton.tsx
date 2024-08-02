@@ -5,6 +5,8 @@ import clsx from 'clsx'
 
 import styles from './MenuButton.module.scss'
 
+import { Icon } from '@/ui/icon/Icon'
+
 export const MenuButton = forwardRef<HTMLButtonElement, HTMLAttributes<HTMLButtonElement>>(
 	function MenuButton({ className, ...props }, ref) {
 		return (
@@ -14,12 +16,10 @@ export const MenuButton = forwardRef<HTMLButtonElement, HTMLAttributes<HTMLButto
 				ref={ref}
 				{...props}
 			>
-				<svg
+				<Icon
 					className={styles.icon}
-					xmlns='http://www.w3.org/2000/svg'
-				>
-					<use href='/images/sprite.svg#menu' />
-				</svg>
+					id='burger'
+				/>
 			</button>
 		)
 	}

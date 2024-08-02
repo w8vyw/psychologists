@@ -1,12 +1,13 @@
 @import '@/styles/variables';
 
 .footer {
-	margin-top: 80px;
-	padding: 80px 0;
+	margin-top: var(--m-b);
+	padding: var(--m-b) 0;
 
 	background: var(--secondary-color);
 
-	font-size: 20px;
+	font-size: var(--f-z-p-md);
+	font-weight: 500;
 
 	&.isOtherPage {
 		background: white;
@@ -15,7 +16,7 @@
 	.wrapper {
 		display: flex;
 		justify-content: space-between;
-		gap: 60px;
+		gap: clamp(40px, 6vw, 60px);
 
 		@media (width <= $lg) {
 			flex-direction: column;
@@ -30,5 +31,9 @@
 
 	.tg {
 		color: var(--black);
+
+		svg {
+			fill: var(--black);
+		}
 	}
 }

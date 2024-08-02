@@ -4,7 +4,7 @@ import clsx from 'clsx'
 
 import '@/styles/global.scss'
 
-import { Providers } from '@/providers/providers'
+import { Providers } from '@/providers/Providers'
 
 import { Wrapper } from '../../ui/wrapper/Wrapper'
 import { Footer } from './footer/Footer'

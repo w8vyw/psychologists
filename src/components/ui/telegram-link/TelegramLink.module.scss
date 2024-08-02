@@ -2,14 +2,25 @@
 
 .link {
 	display: flex;
+
 	align-items: center;
-	gap: 10px;
+
+	gap: var(--gap-sm);
 
 	color: var(--primary-color);
-	font-size: var(--f-z-p-sm);
+	font-size: var(--f-z-p-md);
 
 	.icon {
-		width: 25px;
-		height: 25px;
+		width: 20px;
+		height: 18px;
+
+		margin-bottom: 4px;
+
+		fill: var(--primary-color);
+
+		@media (width <= $sm) {
+			width: 18px;
+			height: 16px;
+		}
 	}
 }

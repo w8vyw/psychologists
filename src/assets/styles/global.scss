@@ -24,6 +24,7 @@
 
 	// gaps
 	--gap: clamp(10px, 2.5vw, 30px);
+	--gap-sm: clamp(5px, 1vw, 10px);
 
 	// font-sizes
 	--f-z-h1: clamp(36px, 6vw, 50px);
@@ -45,8 +46,6 @@ body {
 	flex-direction: column;
 
 	background: var(--background-color);
-
-	// background: var(--secondary-color);
 
 	color: var(--black);
 	font-size: var(--f-z-p);

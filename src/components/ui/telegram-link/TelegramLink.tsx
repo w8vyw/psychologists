@@ -6,6 +6,8 @@ import clsx from 'clsx'
 
 import styles from './TelegramLink.module.scss'
 
+import { Icon } from '@/ui/icon/Icon'
+
 export function TelegramLink({ className, ...props }: ComponentPropsWithoutRef<'a'>) {
 	return (
 		<NextLink
@@ -15,9 +17,10 @@ export function TelegramLink({ className, ...props }: ComponentPropsWithoutRef<'
 			{...props}
 		>
 			Наш канал
-			<svg className={styles.icon}>
-				<use href='/images/sprite.svg#tg' />
-			</svg>
+			<Icon
+				className={styles.icon}
+				id='tg'
+			/>
 		</NextLink>
 	)
 }

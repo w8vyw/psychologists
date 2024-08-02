@@ -11,6 +11,7 @@ import { links } from '@/data/links.data'
 
 import { Logo } from '@/ui/logo/Logo'
 import { TelegramLink } from '@/ui/telegram-link/TelegramLink'
+import { W8 } from '@/ui/w8/W8'
 import { Wrapper } from '@/ui/wrapper/Wrapper'
 
 export function Footer() {
@@ -38,7 +39,7 @@ export function Footer() {
 					</ul>
 				</div>
 				<div>
-					<ul>
+					<ul className={styles.list}>
 						<li>
 							<NextLink href='tel:+79852428318'>+7 985 242 83 18</NextLink>
 						</li>
@@ -50,6 +51,9 @@ export function Footer() {
 						</li>
 						<li>
 							<TelegramLink className={styles.tg} />
+						</li>
+						<li>
+							<W8 />
 						</li>
 					</ul>
 				</div>
