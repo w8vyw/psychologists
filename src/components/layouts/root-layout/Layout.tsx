@@ -4,9 +4,10 @@ import clsx from 'clsx'
 
 import '@/styles/global.scss'
 
+import { Wrapper } from '@/ui/wrapper/Wrapper'
+
 import { Providers } from '@/providers/Providers'
 
-import { Wrapper } from '../../ui/wrapper/Wrapper'
 import { Footer } from './footer/Footer'
 import { Header } from './header/Header'
 import { ToTop } from './to-top/ToTop'
