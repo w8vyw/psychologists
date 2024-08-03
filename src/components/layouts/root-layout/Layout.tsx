@@ -1,5 +1,6 @@
 import { Inter, Tenor_Sans } from 'next/font/google'
 
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import clsx from 'clsx'
 
 import '@/styles/global.scss'
@@ -46,6 +47,7 @@ export function RootLayout({
 					</main>
 					<Footer />
 					<ToTop />
+					<SpeedInsights />
 				</body>
 			</Providers>
 		</html>

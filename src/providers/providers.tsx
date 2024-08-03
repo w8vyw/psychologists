@@ -8,11 +8,13 @@ import { CounterStoreProvider } from '@/providers/counter-store-provider'
 
 export function Providers({ children }: PropsWithChildren) {
 	return (
-		<LazyMotion
-			strict
-			features={domAnimation}
-		>
-			<CounterStoreProvider>{children}</CounterStoreProvider>
-		</LazyMotion>
+		<CounterStoreProvider>
+			<LazyMotion
+				strict
+				features={domAnimation}
+			>
+				{children}
+			</LazyMotion>
+		</CounterStoreProvider>
 	)
 }
