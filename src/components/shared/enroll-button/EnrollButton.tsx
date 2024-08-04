@@ -28,8 +28,8 @@ interface IEnrollButtonProps extends ComponentPropsWithoutRef<'a'> {
 	children?: ReactNode
 }
 
+// const { setPsychologist } = useCounterStore(state => state)
 export function EnrollButton({ size, test, children, className, ...props }: IEnrollButtonProps) {
-	// const { setPsychologist } = useCounterStore(state => state)
 	const router = useRouter()
 	const pathname = usePathname()
 	const pagesMembership = [

@@ -35,12 +35,12 @@ export function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<Providers>
-			<html
-				lang='ru'
-				className='__poweredBy__w8vy.dev__Next.js__'
-			>
-				<body className={clsx(inter.className, tenorSans.variable)}>
+		<html
+			lang='ru'
+			className='__poweredBy__w8vy.dev__Next.js__'
+		>
+			<body className={clsx(inter.className, tenorSans.variable)}>
+				<Providers>
 					<Header />
 					<main>
 						<Wrapper>{children}</Wrapper>
@@ -48,8 +48,8 @@ export function RootLayout({
 					<Footer />
 					<ToTop />
 					<SpeedInsights />
-				</body>
-			</html>
-		</Providers>
+				</Providers>
+			</body>
+		</html>
 	)
 }
