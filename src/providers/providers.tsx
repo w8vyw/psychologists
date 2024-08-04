@@ -1,3 +1,5 @@
+'use client'
+
 import { PropsWithChildren } from 'react'
 
 import { LazyMotion, domAnimation } from 'framer-motion'
@@ -11,8 +13,8 @@ export function Providers({ children }: PropsWithChildren) {
 		// 	strict
 		// 	features={domAnimation}
 		// >
-		// 	<CounterStoreProvider>{children}</CounterStoreProvider>
+		<CounterStoreProvider>{children}</CounterStoreProvider>
 		// </LazyMotion>
-		<div>{children}</div>
+		// <div>{children}</div>
 	)
 }
