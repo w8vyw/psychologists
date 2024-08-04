@@ -6,8 +6,8 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState, type ElementRef } from 'react'
 
 import clsx from 'clsx'
-import { m, type Variants } from 'framer-motion'
 
+// import { m, type Variants } from 'framer-motion'
 import styles from './Navigation.module.scss'
 
 import { links } from '@/data/links.data'
@@ -44,42 +44,42 @@ export function Navigation() {
 
 	useClickOutside(menuRef, () => toggleMenu(false))
 
-	const menuVariants: Variants = {
-		closed: {
-			x: '100%',
-			transition: { duration: 0.15, staggerChildren: 0.02 }
-		},
-		opened: {
-			x: '0%',
-			transition: {
-				duration: 0.1,
-				when: 'beforeChildren',
-				staggerChildren: 0.05,
-				delayChildren: 0.075
-			}
-		}
-	}
+	// const menuVariants: Variants = {
+	// 	closed: {
+	// 		x: '100%',
+	// 		transition: { duration: 0.15, staggerChildren: 0.02 }
+	// 	},
+	// 	opened: {
+	// 		x: '0%',
+	// 		transition: {
+	// 			duration: 0.1,
+	// 			when: 'beforeChildren',
+	// 			staggerChildren: 0.05,
+	// 			delayChildren: 0.075
+	// 		}
+	// 	}
+	// }
 
-	const menuItemVariants: Variants = {
-		closed: { x: 100, opacity: 0 },
-		opened: { x: 0, opacity: 1 }
-	}
+	// const menuItemVariants: Variants = {
+	// 	closed: { x: 100, opacity: 0 },
+	// 	opened: { x: 0, opacity: 1 }
+	// }
 
 	return (
 		<>
 			<nav className={clsx(styles.nav, isOtherPage && styles.isOtherPage)}>
-				<m.ul
+				<ul
 					className={clsx(styles.list)}
 					ref={menuRef}
-					variants={menuVariants}
-					animate={!isMobile || isMenuOpened ? 'opened' : 'closed'}
-					initial={'closed'}
+					// variants={menuVariants}
+					// animate={!isMobile || isMenuOpened ? 'opened' : 'closed'}
+					// initial={'closed'}
 				>
 					{links.map((link, index) => (
-						<m.li
+						<li
 							key={index}
 							onClick={() => toggleMenu(!isMenuOpened)}
-							variants={menuItemVariants}
+							// variants={menuItemVariants}
 						>
 							<NextLink
 								className={clsx(styles.link, pathname === link.url && styles.active)}
@@ -87,31 +87,31 @@ export function Navigation() {
 							>
 								{link.label}
 							</NextLink>
-						</m.li>
+						</li>
 					))}
 					{isMobile && (
 						<>
-							<m.li
+							<li
 								className={styles.phone}
-								variants={menuItemVariants}
+								// variants={menuItemVariants}
 							>
 								<NextLink href='tel:+79852428318'>+7 985 242 83 18</NextLink>
-							</m.li>
-							<m.li
+							</li>
+							<li
 								className={styles.phone}
-								variants={menuItemVariants}
+								// variants={menuItemVariants}
 							>
 								<NextLink href='tel:+79254507146'>+7 925 450 71 46</NextLink>
-							</m.li>
-							<m.li
+							</li>
+							<li
 								className={styles.tg}
-								variants={menuItemVariants}
+								// variants={menuItemVariants}
 							>
 								<TelegramLink />
-							</m.li>
+							</li>
 						</>
 					)}
-				</m.ul>
+				</ul>
 				{isMobile && (
 					<>
 						<MenuButton onClick={() => toggleMenu(!isMenuOpened)} />
