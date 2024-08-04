@@ -4,9 +4,10 @@ import { PropsWithChildren } from 'react'
 
 import { LazyMotion, domAnimation } from 'framer-motion'
 
-import { CounterStoreProvider } from '@/providers/counter-store-provider'
+import { CounterStoreProvider } from './counter-store-provider'
 
 export function Providers({ children }: PropsWithChildren) {
+	console.log('Created by w8vy.dev | @w8vyw')
 	return (
 		<LazyMotion
 			strict

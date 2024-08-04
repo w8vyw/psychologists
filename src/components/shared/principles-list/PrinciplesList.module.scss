@@ -1,0 +1,52 @@
+@import '@/styles/variables';
+
+.principlesList {
+	.heading {
+		margin-bottom: 50px;
+
+		font-family: var(--secondary-font);
+		font-size: var(--f-z-h1);
+		line-height: 1.2;
+		text-align: center;
+	}
+
+	.list {
+		grid-template-columns: repeat(3, 350px);
+
+		display: grid;
+		justify-content: center;
+		gap: 30px;
+
+		@media (width <= $xl) {
+			grid-template-columns: repeat(2, 350px);
+		}
+
+		@media (width <= $xl) {
+			grid-template-columns: repeat(1, 350px);
+
+			justify-content: center;
+		}
+
+		.item {
+			// max-width: 350px;
+
+			.title {
+				color: var(--primary-color);
+
+				font-size: var(--f-z-p-md);
+				font-weight: 500;
+			}
+
+			.text {
+				font-size: var(--f-z-p-md);
+			}
+
+			.image {
+				// min-width: 0;
+				margin-bottom: 20px;
+				border-radius: 7px 7px 60px;
+				overflow: hidden;
+			}
+		}
+	}
+}

@@ -1,0 +1,55 @@
+@import '@/styles/variables';
+
+.helpList {
+	font-size: var(--f-z-p-sm);
+	line-height: 1.2;
+
+	.heading {
+		margin-bottom: 60px;
+
+		font-family: var(--secondary-font);
+		font-size: var(--f-z-h1);
+		text-align: center;
+	}
+
+	.list {
+		grid-template-columns: repeat(3, 350px);
+
+		display: grid;
+		justify-content: center;
+		gap: 30px;
+
+		@media (width <= $xl) {
+			grid-template-columns: repeat(2, 350px);
+		}
+
+		@media (width <= $md) {
+			grid-template-columns: repeat(1, 350px);
+		}
+
+		.item {
+			position: relative;
+
+			width: 350px;
+			height: 265px;
+			padding: 25px 35px;
+			border: 1px solid #d9d9d9;
+			border-radius: 7px 7px 90px;
+			overflow: hidden;
+
+			.title {
+				color: var(--primary-color);
+				font-size: var(--f-z-p-md);
+				font-weight: 500;
+			}
+
+			.image {
+				position: absolute;
+				inset: 0;
+				z-index: -1;
+
+				user-select: none;
+			}
+		}
+	}
+}

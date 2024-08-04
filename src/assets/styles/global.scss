@@ -53,6 +53,7 @@
 body {
 	display: flex;
 	flex-direction: column;
+	min-height: 4000px;
 
 	background: var(--background-color);
 

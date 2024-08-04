@@ -1,0 +1,63 @@
+@import '@/styles/variables';
+
+.service {
+	font-size: var(--f-z-p-sm);
+	line-height: 1.2;
+
+	.heading {
+		margin-bottom: 60px;
+
+		font-family: var(--secondary-font);
+		font-size: var(--f-z-h1);
+		text-align: center;
+	}
+
+	.list {
+		grid-template-columns: repeat(2, 1fr);
+
+		display: grid;
+		justify-content: center;
+		gap: 30px;
+
+		@media (width <= $xl) {
+			grid-template-columns: repeat(2, 350px);
+		}
+
+		@media (width <= $md) {
+			grid-template-columns: repeat(1, 350px);
+		}
+
+		.item {
+			max-width: 540px;
+			padding: 50px 60px;
+			border: 1px solid #d9d9d9;
+			border-radius: 7px 7px 60px;
+			overflow: hidden;
+
+			> div {
+				display: flex;
+				gap: 30px;
+			}
+
+			.title {
+				margin-bottom: 10px;
+
+				color: var(--primary-color);
+				font-size: var(--f-z-h5);
+				font-weight: 500;
+			}
+
+			.duration {
+				margin-bottom: 20px;
+
+				font-size: var(--f-z-p-md);
+			}
+
+			.price {
+				font-size: var(--f-z-h2);
+				font-weight: 700;
+				line-height: 1.2;
+			}
+		}
+	}
+}
