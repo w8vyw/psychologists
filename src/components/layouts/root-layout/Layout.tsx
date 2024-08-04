@@ -7,8 +7,7 @@ import '@/styles/global.scss'
 
 import { Wrapper } from '@/ui/wrapper/Wrapper'
 
-import { Providers } from '@/providers/Providers'
-
+// import { Providers } from '@/providers/Providers'
 import { Footer } from './footer/Footer'
 import { Header } from './header/Header'
 import { ToTop } from './to-top/ToTop'
@@ -40,15 +39,15 @@ export function RootLayout({
 			className='__poweredBy__w8vy.dev__Next.js__'
 		>
 			<body className={clsx(inter.className, tenorSans.variable)}>
-				<Providers>
-					<Header />
-					<main>
-						<Wrapper>{children}</Wrapper>
-					</main>
-					<Footer />
-					<ToTop />
-					<SpeedInsights />
-				</Providers>
+				{/* <Providers> */}
+				<Header />
+				<main>
+					<Wrapper>{children}</Wrapper>
+				</main>
+				<Footer />
+				<ToTop />
+				<SpeedInsights />
+				{/* </Providers> */}
 			</body>
 		</html>
 	)
