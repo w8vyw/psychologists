@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 import '@/styles/global.scss'
 
-import { RootLayout } from '@/components/layouts/root-layout/Layout'
+import { RootLayout } from '@/components/layouts/root-layout/RootLayout'
 
 export const metadata: Metadata = {
 	metadataBase: new URL('https://ir-ox-help.ru'),

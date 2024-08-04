@@ -7,8 +7,7 @@ import '@/styles/global.scss'
 
 import { Wrapper } from '@/ui/wrapper/Wrapper'
 
-import { Providers } from '@/providers/Providers'
-
+import { Providers } from './Providers'
 import { Footer } from './footer/Footer'
 import { Header } from './header/Header'
 import { ToTop } from './to-top/ToTop'
