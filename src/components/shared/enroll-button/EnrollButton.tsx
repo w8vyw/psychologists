@@ -9,7 +9,7 @@ import clsx from 'clsx'
 
 import styles from './EnrollButton.module.scss'
 
-// import { useCounterStore } from '@/providers/counter-store-provider'
+import { useCounterStore } from '@/providers/counter-store-provider'
 
 export enum EnumEnrollButtonSizes {
 	Small,
@@ -27,9 +27,8 @@ interface IEnrollButtonProps extends ComponentPropsWithoutRef<'a'> {
 	test?: EnumEnrollButtonTests
 	children?: ReactNode
 }
-
-// const { setPsychologist } = useCounterStore(state => state)
 export function EnrollButton({ size, test, children, className, ...props }: IEnrollButtonProps) {
+	const { setPsychologist } = useCounterStore(state => state)
 	const router = useRouter()
 	const pathname = usePathname()
 	const pagesMembership = [
@@ -67,7 +66,7 @@ export function EnrollButton({ size, test, children, className, ...props }: IEnr
 					return thisPage ? thisPage.psychologists : 'both'
 				}
 
-				// setPsychologist(whosePage())
+				setPsychologist(whosePage())
 
 				router.push('/#feedback')
 			}}

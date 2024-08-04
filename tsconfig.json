@@ -19,11 +19,12 @@
 		],
 		"baseUrl": "src",
 		"paths": {
-			"@/images/*": ["assets/images/*"],
-			"@/styles/*": ["assets/styles/*"],
 			"@/shared/*": ["components/shared/*"],
 			"@/ui/*": ["components/ui/*"],
 			"@/components/*": ["components/*"],
+			"@/providers/*": ["components/layouts/root-layout/providers/*"],
+			"@/images/*": ["assets/images/*"],
+			"@/styles/*": ["assets/styles/*"],
 			"@/*": ["./*"]
 		}
 	},

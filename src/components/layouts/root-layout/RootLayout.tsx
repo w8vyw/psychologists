@@ -7,9 +7,9 @@ import '@/styles/global.scss'
 
 import { Wrapper } from '@/ui/wrapper/Wrapper'
 
-import { Providers } from './Providers'
 import { Footer } from './footer/Footer'
 import { Header } from './header/Header'
+import { Providers } from './providers/Providers'
 import { ToTop } from './to-top/ToTop'
 
 const inter = Inter({
@@ -46,8 +46,8 @@ export function RootLayout({
 					</main>
 					<Footer />
 					<ToTop />
-					<SpeedInsights />
 				</Providers>
+				<SpeedInsights />
 			</body>
 		</html>
 	)
