@@ -17,6 +17,7 @@ export function W8({ theme = 'light', className, ...props }: IW8Props) {
 			href='https://t.me/w8vyw'
 			target='_blank'
 			{...props}
+			aria-label='Powered by w8vy.dev | @w8vyw'
 		>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'

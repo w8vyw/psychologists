@@ -1,9 +1,7 @@
 node_modules
-.pnp
-.pnp.js
-.yarn/install-state.gz
 .next
 next-env.d.ts
-
 .fttemplates
-bun.lockb
+ir.txt
+ox.txt
+Edits.txt

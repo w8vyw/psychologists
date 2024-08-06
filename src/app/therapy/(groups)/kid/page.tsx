@@ -120,10 +120,10 @@ export default function Kid() {
 						maxCapacity: 7,
 						minSessions: 12,
 						sessionDuration: '2ч / x2 в неделю',
-						groupDuration: '10 занятий',
+						groupDuration: '12 занятий',
 						price: {
-							online: 1500,
-							offline: 2500
+							online: 2500,
+							offline: 3500
 						}
 					}
 				}}

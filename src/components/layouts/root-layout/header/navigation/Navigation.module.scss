@@ -1,123 +1,211 @@
 @import '@/styles/variables';
 
-.nav {
+.list {
 	--border: 1px solid #e2e5ec;
-	padding: 20px 35px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+	padding: 0 30px;
 	border-top: var(--border);
 	border-bottom: var(--border);
 
+	color: var(--black);
+	font-size: var(--f-z-p-sm);
+
 	@media (width <= $lg) {
-		--border: none;
+		position: fixed;
+		top: 74px;
+		left: 0;
+		z-index: var(--z-i-high);
 
-		padding: 0;
+		flex-flow: column nowrap;
+		justify-content: flex-start;
+		align-items: flex-start;
+		width: 100%;
+		height: calc(100dvh - 74px);
+		padding: 20px;
+		overflow-y: auto;
 
-		font-size: 16px;
-		text-align: center;
-	}
+		background: white;
 
-	.list {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		align-items: center;
-		gap: 20px;
+		text-align: left;
 
-		color: var(--black);
+		transition: scale 200ms ease;
 
-		@media (width <= $lg) {
-			position: fixed;
-			top: 0;
-			right: 0;
-			z-index: var(--z-i-high);
+		transform-origin: top;
+		scale: 1 0;
 
-			flex-flow: column nowrap;
-
-			justify-content: flex-start;
-			width: 65%;
-			height: 100dvh;
-			padding: 20px 10px;
-
-			background: white;
-
-			transition: 200ms ease-out;
-		}
-
-		.phone {
-			color: var(--black);
-		}
-	}
-
-	.link {
-		position: relative;
-
-		display: block;
-		padding: 5px;
-
-		font-size: 18px;
-
-		transition: color 200ms ease-in-out;
-
-		@media (hover: hover) and (pointer: fine) {
-			&:hover {
-				color: var(--black);
-
-				&::after {
-					transform-origin: left;
-					scale: 1;
-				}
-			}
-
-			&.active {
-				&:hover {
-					color: var(--primary-color);
-				}
-			}
-		}
-
-		@media (hover: none) and (pointer: coarse) {
-			&:active {
-				color: var(--black);
-			}
-		}
-
-		@media (width <= $lg) {
-			font-size: 16px;
-		}
-
-		&::after {
-			content: '';
-
-			position: absolute;
-			top: 100%;
-			left: 0;
-
-			display: block;
-			width: 100%;
-			height: 2px;
-
-			background: var(--primary-color);
-
-			transition: scale 300ms ease;
-
-			transform-origin: right;
-			scale: 0 1;
+		&::-webkit-scrollbar {
+			width: 4px;
 		}
 
 		&.active {
-			color: var(--primary-color);
+			scale: 1;
 		}
 	}
 
-	&.isOtherPage {
-		--border: none;
-		padding: 21px 35px;
+	@media (width <= $sm) {
+		top: 68px;
+
+		height: calc(100dvh - 68px);
+	}
+
+	.item {
+		position: relative;
+
+		padding: 20px 0;
 
 		@media (width <= $lg) {
 			padding: 0;
 		}
 
-		.list {
-			color: #9c9c9c;
+		&:hover {
+			.subList {
+				visibility: visible;
+
+				scale: 1;
+			}
+		}
+
+		.link {
+			position: relative;
+
+			display: block;
+			padding: 10px;
+
+			line-height: 1;
+
+			white-space: nowrap;
+
+			transition: color 200ms ease;
+
+			@media (hover: hover) and (pointer: fine) {
+				&:hover {
+					color: var(--black);
+
+					&::after {
+						transform-origin: left;
+						scale: 1;
+					}
+				}
+
+				&.active {
+					&:hover {
+						color: var(--primary-color);
+					}
+				}
+			}
+
+			@media (hover: none) and (pointer: coarse) {
+				&:active {
+					color: var(--black);
+				}
+			}
+
+			@media (width <= 400px) {
+				white-space: wrap;
+			}
+
+			&::after {
+				content: '';
+
+				position: absolute;
+				top: 100%;
+				left: 0;
+
+				display: block;
+				width: 100%;
+				height: 2px;
+
+				background: var(--primary-color);
+
+				transition: scale 300ms ease;
+
+				transform-origin: right;
+				scale: 0 1;
+			}
+
+			&.active {
+				color: var(--primary-color);
+			}
+		}
+
+		.subList {
+			position: absolute;
+			top: 100%;
+			left: -30px;
+			z-index: var(--z-i-lite);
+
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+
+			padding: 20px 30px;
+			border: var(--border);
+			border-radius: 0 0 30px 30px;
+			overflow: hidden;
+			visibility: hidden;
+
+			background: white;
+
+			transition: 300ms ease;
+
+			transform-origin: top;
+			scale: 1 0;
+
+			@media (width <= $lg) {
+				position: static;
+
+				gap: 0;
+
+				padding: 0 10px;
+				border: none;
+				visibility: visible;
+
+				scale: 1;
+			}
+
+			.subItem {
+				padding: 0;
+
+				.subLink {
+					&::after {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+
+	.phone {
+		color: var(--black);
+
+		a {
+			display: block;
+
+			padding: 5px 10px;
+		}
+	}
+
+	.tg {
+		a {
+			padding: 5px 10px;
+		}
+	}
+
+	&.isOtherPage {
+		border: none;
+
+		color: #9c9c9c;
+
+		.item {
+			padding: 21px 0;
+
+			@media (width <= $lg) {
+				padding: 0;
+			}
 		}
 	}
 }

@@ -40,7 +40,6 @@ export default function Slimness() {
 			/>
 			<Text className={styles.text}>
 				<Title>Кому подходит:</Title>
-				<p>Внутренний ребенок – это образ, который живет в душе взрослого человека.</p>
 				<p>
 					Психотерапевтическая группа «Счастливая стройность» для тех, кто хочет разобраться с
 					психологическими проблемами лишнего веса, а соответственно, постройнеть и наладить свои
@@ -172,8 +171,8 @@ export default function Slimness() {
 						sessionDuration: '2ч / x2 в неделю',
 						groupDuration: 'долгосрочно',
 						price: {
-							online: 1500,
-							offline: 2500
+							online: 2500,
+							offline: 3500
 						}
 					}
 				}}

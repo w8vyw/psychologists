@@ -20,17 +20,12 @@ const data: IItem[] = [
 	{
 		title: '1 онлайн сессия',
 		duration: 'Продолжительность сессии 60 минут',
-		price: '5 000'
+		price: '4 900'
 	},
 	{
 		title: '1 очная сессия',
 		duration: 'Продолжительность сессии 60 минут',
-		price: '3 900'
-	},
-	{
-		title: 'Курс терапии 5 сессий онлайн',
-		duration: 'Продолжительность сессии 60 минут',
-		price: '18 500'
+		price: '5 990'
 	}
 ]
 
@@ -39,6 +34,7 @@ export function Service({ className, ...props }: IServiceProps) {
 		<section
 			className={clsx(styles.service, className)}
 			{...props}
+			id='feedback'
 		>
 			<h2 className={styles.heading}>Услуги</h2>
 			<div className={styles.list}>

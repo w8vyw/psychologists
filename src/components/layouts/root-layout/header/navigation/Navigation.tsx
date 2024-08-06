@@ -3,19 +3,16 @@
 import NextLink from 'next/link'
 import { usePathname } from 'next/navigation'
 
-import { useEffect, useRef, useState, type ElementRef } from 'react'
+import { useEffect, useState } from 'react'
 
 import clsx from 'clsx'
 
-// import { m, type Variants } from 'framer-motion'
 import styles from './Navigation.module.scss'
 
 import { links } from '@/data/links.data'
 
-import { useClickOutside } from '@/hooks/useClickOutside'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 
-import { Overlay } from '@/ui/overlay/Overlay'
 import { TelegramLink } from '@/ui/telegram-link/TelegramLink'
 
 import { lg } from '@/constants/breakpoints.constants'
@@ -25,88 +22,77 @@ import { MenuButton } from './menu-button/MenuButton'
 export function Navigation() {
 	const pathname = usePathname()
 	const isOtherPage = pathname !== '/'
+	const isActiveLink = (url: string) => pathname === url
+	const isMobile = useMediaQuery(`(width <= ${lg})`)
+	const [isMenuOpened, setIsMenuOpened] = useState(false)
+	const toggleMenu = () => {
+		isMobile && setIsMenuOpened(!isMenuOpened)
+	}
 
 	useEffect(() => {
 		isOtherPage
 			? document.body.classList.add('isOtherPage')
 			: document.body.classList.remove('isOtherPage')
-	}, [isOtherPage])
-	const isMobile = useMediaQuery(`(width <= ${lg})`)
-	const [isMenuOpened, setIsMenuOpened] = useState(false)
-	const menuRef = useRef<ElementRef<'ul'>>(null)
-
-	const toggleMenu = (state: boolean) => {
-		setIsMenuOpened(state)
 		isMenuOpened
-			? document.body.classList.add('scrollLocked')
-			: document.body.classList.remove('scrollLocked')
-	}
-
-	useClickOutside(menuRef, () => toggleMenu(false))
-
-	// const menuVariants: Variants = {
-	// 	closed: {
-	// 		x: '100%',
-	// 		transition: { duration: 0.15, staggerChildren: 0.02 }
-	// 	},
-	// 	opened: {
-	// 		x: '0%',
-	// 		transition: {
-	// 			duration: 0.1,
-	// 			when: 'beforeChildren',
-	// 			staggerChildren: 0.05,
-	// 			delayChildren: 0.075
-	// 		}
-	// 	}
-	// }
-
-	// const menuItemVariants: Variants = {
-	// 	closed: { x: 100, opacity: 0 },
-	// 	opened: { x: 0, opacity: 1 }
-	// }
+			? document.documentElement.classList.add('scrollLocked')
+			: document.documentElement.classList.remove('scrollLocked')
+	}, [isOtherPage, isMenuOpened])
 
 	return (
 		<>
-			<nav className={clsx(styles.nav, isOtherPage && styles.isOtherPage)}>
+			<nav>
 				<ul
-					className={clsx(styles.list)}
-					ref={menuRef}
-					// variants={menuVariants}
-					// animate={!isMobile || isMenuOpened ? 'opened' : 'closed'}
-					// initial={'closed'}
+					className={clsx(
+						styles.list,
+						isMenuOpened && styles.active,
+						isOtherPage && styles.isOtherPage
+					)}
 				>
 					{links.map((link, index) => (
 						<li
+							className={styles.item}
 							key={index}
-							onClick={() => toggleMenu(!isMenuOpened)}
-							// variants={menuItemVariants}
+							onClick={toggleMenu}
 						>
 							<NextLink
-								className={clsx(styles.link, pathname === link.url && styles.active)}
+								className={clsx(styles.link, isActiveLink(link.url) && styles.active)}
 								href={link.url}
 							>
 								{link.label}
 							</NextLink>
+							{typeof link.subLinks !== 'undefined' && (
+								<ul className={styles.subList}>
+									{link.subLinks.map((subLink, subLinkIndex) => (
+										<li
+											key={subLinkIndex}
+											className={clsx(styles.item, styles.subItem)}
+											onClick={toggleMenu}
+										>
+											<NextLink
+												className={clsx(
+													styles.link,
+													styles.subLink,
+													isActiveLink(link.url + subLink.url) && styles.active
+												)}
+												href={link.url + subLink.url}
+											>
+												{subLink.label}
+											</NextLink>
+										</li>
+									))}
+								</ul>
+							)}
 						</li>
 					))}
 					{isMobile && (
 						<>
-							<li
-								className={styles.phone}
-								// variants={menuItemVariants}
-							>
+							<li className={styles.phone}>
 								<NextLink href='tel:+79852428318'>+7 985 242 83 18</NextLink>
 							</li>
-							<li
-								className={styles.phone}
-								// variants={menuItemVariants}
-							>
+							<li className={styles.phone}>
 								<NextLink href='tel:+79254507146'>+7 925 450 71 46</NextLink>
 							</li>
-							<li
-								className={styles.tg}
-								// variants={menuItemVariants}
-							>
+							<li className={styles.tg}>
 								<TelegramLink />
 							</li>
 						</>
@@ -114,8 +100,7 @@ export function Navigation() {
 				</ul>
 				{isMobile && (
 					<>
-						<MenuButton onClick={() => toggleMenu(!isMenuOpened)} />
-						<Overlay isActive={isMenuOpened} />
+						<MenuButton onClick={toggleMenu} />
 					</>
 				)}
 			</nav>

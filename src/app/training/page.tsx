@@ -17,7 +17,7 @@ import ContentImage2 from '@/images/training/content/2.webp'
 import PreviewImage1 from '@/images/training/preview/1.webp'
 import PreviewImage2 from '@/images/training/preview/2.webp'
 
-const title = 'Тренинг - Город желаний'
+const title = 'Город желаний'
 
 const previewImages: [IImage, IImage] = [
 	{
@@ -36,7 +36,8 @@ export default function Trainings() {
 			<PreviewImages images={previewImages} />
 			<Heading
 				data={{
-					title: title
+					title: title,
+					subtitle: 'Тренинг'
 				}}
 			/>
 			<Text className={styles.text}>
@@ -134,7 +135,7 @@ export default function Trainings() {
 						Длительность тренинга – <span>5-6 часов.</span>
 					</p>
 					<p>
-						Стоимость – <span>3500 рублей.</span>
+						Стоимость – <span>6500 рублей.</span>
 					</p>
 				</div>
 				<p>Количество мест ограничено!</p>

@@ -50,6 +50,7 @@ export function EnrollButton({ size, test, children, className, ...props }: IEnr
 				className
 			)}
 			href='/#feedback'
+			aria-label='Записаться'
 			{...props}
 			onClick={e => {
 				e.preventDefault()
