@@ -1,0 +1,266 @@
+@import '@/styles/variables';
+
+.form {
+	--input-bg: #eceff5;
+	--input-border: 1px solid #e2e5ec;
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 30px;
+	padding: 60px 90px;
+	border-radius: 20px 20px 60px;
+	overflow: hidden;
+	box-shadow: 0 30px 60px -10px rgb(0 0 0 / 25%);
+
+	background: white;
+
+	font-size: var(--f-z-p-md);
+	line-height: 1.3;
+
+	@media (width <= $md) {
+		padding: 30px 45px;
+	}
+
+	@media (width <= $sm) {
+		padding: 15px 30px;
+	}
+
+	&::after {
+		content: '';
+
+		position: absolute;
+		right: 0;
+		bottom: 0;
+
+		display: block;
+		width: 507px;
+		height: 349px;
+
+		background-image: url('/images/form/2.webp');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+
+		@media (width <= $lg) {
+			display: none;
+		}
+	}
+
+	&::before {
+		content: '';
+
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		display: block;
+		width: 270px;
+		height: 171px;
+
+		background-image: url('/images/form/1.webp');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+
+		@media (width <= $md) {
+			display: none;
+		}
+	}
+
+	.heading {
+		color: var(--primary-color);
+		font-family: var(--secondary-font);
+		font-size: var(--f-z-h2);
+		line-height: 1.2;
+	}
+
+	.inputsContainer {
+		grid-template-areas:
+			'input1 textarea'
+			'input2 textarea';
+
+		display: grid;
+		gap: 20px;
+		align-self: stretch;
+
+		@media (width <= $lg) {
+			grid-template-areas:
+				'input1'
+				'input2'
+				'textarea';
+		}
+
+		.inputContainer {
+			display: flex;
+			flex-direction: column;
+
+			&:nth-child(1) {
+				grid-area: input1;
+			}
+
+			&:nth-child(2) {
+				grid-area: input2;
+			}
+
+			&:nth-child(3) {
+				grid-area: textarea;
+			}
+
+			.input {
+				display: block;
+				flex-grow: 1;
+				width: 100%;
+				padding: 26px 30px;
+				border: var(--input-border);
+				border-radius: 10px;
+
+				background: var(--input-bg);
+
+				&::placeholder {
+					color: #adadad;
+				}
+			}
+
+			.textarea {
+				min-height: 200px;
+
+				resize: none;
+			}
+		}
+	}
+
+	.title {
+		// margin-bottom: 20px;
+	}
+
+	.radioContainer {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+}
+
+.psyButton {
+	--border: 1px solid #adadad;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 20px 30px;
+	border: var(--border);
+	border-radius: 10px;
+
+	color: #adadad;
+
+	transition: 200ms ease;
+
+	@media (width <= $sm) {
+		padding: 10px 20px;
+	}
+
+	.checkbox {
+		position: relative;
+
+		display: block;
+		width: 32px;
+		height: 32px;
+		border: var(--border);
+		border-radius: 50%;
+
+		&::after {
+			content: '';
+
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			display: block;
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+
+			background: #adadad;
+
+			transition: 200ms ease;
+
+			translate: -50% -50%;
+		}
+	}
+}
+
+.connectTypeButton {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+
+	.checkbox {
+		position: relative;
+
+		display: block;
+		width: 35px;
+		height: 35px;
+		border: 1px solid #adadad;
+
+		border-radius: 5px;
+
+		transition: 200ms ease;
+
+		&::after {
+			content: '';
+
+			position: absolute;
+			top: 50%;
+			left: 50%;
+
+			display: block;
+			width: 21px;
+			height: 16px;
+
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 21 16' fill='white'%3E%3Cpath d='M7.364 12.678L1.707 7.021.293 8.436l7.071 7.07L20.799 2.073 19.385.657 7.364 12.678z' /%3E%3C/svg%3E");
+
+			transition: 200ms ease;
+
+			translate: -50% -50%;
+		}
+	}
+}
+
+.radio {
+	appearance: none;
+
+	position: absolute;
+
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+
+	clip: rect(0 0 0 0);
+
+	&:checked {
+		~ .psyButton {
+			--border: 1px solid var(--green);
+
+			color: var(--black);
+
+			.checkbox::after {
+				background: var(--green);
+			}
+		}
+
+		~ .connectTypeButton {
+			.checkbox {
+				border: 1px solid var(--green);
+
+				background: var(--green);
+			}
+		}
+	}
+}
+
+.error {
+	color: #ff4747;
+}

@@ -41,9 +41,7 @@ export function RootLayout({
 			<body className={clsx(inter.className, tenorSans.variable)}>
 				<Providers>
 					<Header />
-					<main>
-						<Wrapper>{children}</Wrapper>
-					</main>
+					<main>{children}</main>
 					<Footer />
 					<ToTop />
 				</Providers>
