@@ -9,11 +9,10 @@ import { Title } from '@/ui/title/Title'
 
 import { EnumListStyle, List } from '@/shared/list/List'
 import { PreviewImages } from '@/shared/preview-images/PreviewImages'
+import { ProductCard } from '@/shared/product-card/ProductCard'
 
 import PreviewImage from '@/images/therapy/girls/preview.webp'
 import CardImage from '@/images/therapy/girls/product-card.webp'
-
-import { ProductCard } from '../../../../components/shared/product-card/ProductCard'
 
 const title = 'Между нами девочками'
 
